@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-29 21:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: inscription/models.py:14
+msgid "Not Confirmed"
+msgstr "Non confirmé"
+
+#: inscription/models.py:15
+msgid "Confirmed"
+msgstr "Confirmé"
+
+#: inscription/models.py:16
+msgid "Waiting List"
+msgstr "Liste d'attente"
+
+#: inscription/templates/inscription.html:4
+msgid "Enrollment Form"
+msgstr "Formulaire d'inscription"
+
+#: inscription/templates/inscription.html:12
+msgid "Last Name"
+msgstr "Nom"
+
+#: inscription/templates/inscription.html:18
+msgid "First Name"
+msgstr "Prénom"
+
+#: inscription/templates/inscription.html:24
+msgid "Full Address (Street, No., Apto., Postal Code, City, etc.)"
+msgstr "Adresse postal complète (rue, n°, boîte, code postal, ville, etc.)"
+
+#: inscription/templates/inscription.html:30
+msgid "Email Address"
+msgstr "Adresse email"
+
+#: inscription/templates/inscription.html:36
+msgid "Phone"
+msgstr "Téléphone"
+
+#: inscription/templates/inscription.html:44
+msgid "Number of Places"
+msgstr "Nombre d'emplacements"
+
+#: inscription/templates/inscription.html:55
+msgid "Desired Location of the Place(s)"
+msgstr "Lieu souhaité pour le(s) emplacement(s)"
+
+#: inscription/templates/inscription.html:63
+msgid "Send"
+msgstr "Envoyer"
+
+#: inscription/templates/layout.html:10 inscription/templates/layout.html:18
+msgid "Flea Market"
+msgstr "La brocante Bruyères 2017"

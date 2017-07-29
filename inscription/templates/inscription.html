@@ -1,86 +1,69 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html lang="en">
-  <head>
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/custom.min.css' %}" rel="stylesheet">
-
-    <title>La brocante Bruyères 2017</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="page-header">
-        <h1>Formulaire d'inscription à la brocante Bruyères 2017</h1>
-      </div>
-      <form action="{% url 'inscription' %}" method="post">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            {% csrf_token %}
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="last_name">Last Name *</label>
-                  <input type="text" name="last_name" maxlength="30" required class="form-control" id="last_name" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="first_name">First Name *</label>
-                  <input type="text" name="first_name" maxlength="30" required class="form-control" id="first_name" />
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="address">Full Address (Street, No., Apto., Postal Code, City, etc.) *</label>
-              <textarea name="address" rows="3" cols="60" class="form-control" id="address" required></textarea>
-            </div>
-            <div class="row">
-              <div class="col-md-8">
-                <div class="form-group">
-                  <label for="email">Email Address *</label>
-                  <input type="email" name="email" required class="form-control" id="email"/>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label for="phone">Phone *</label>
-                  <input type="text" name="phone" maxlength="20" required class="form-control" id="phone"/>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-2">
-                <div class="form-group">
-                  <label for="number_places">Number of Places</label><br>
-                  <label class="radio-inline">
-                    <input type="radio" name="number_places" id="number_places1" value="1" checked="checked"> 1
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="number_places" id="number_places2" value="2"> 2
-                  </label>
-                </div>
-              </div>
-              <div class="col-md-10">
-                <div class="form-group">
-                  <label for="id_desired_place">Desired Location of the Place</label>
-                  <textarea name="desired_place" rows="3" cols="60" class="form-control" id="desired_place"></textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer">
-            <button type="submit" class="btn btn-primary btn-lg">
-              <span class="glyphicon glyphicon-send" aria-hidden="true"></span> Send
-            </button>
+{% extends 'layout.html' %}
+{% load i18n %}
+{% block content %}
+<h2>{% trans "Enrollment Form" %}</h2>
+<form action="{% url 'inscription' %}" method="post">
+  <p class="required">* {% trans "Required" %}</p>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="last_name">{% trans "Last Name" %} <span class="required">*</span></label>
+            <input type="text" name="last_name" maxlength="30" required class="form-control" id="last_name" />
           </div>
         </div>
-      </form>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="first_name">{% trans "First Name" %} <span class="required">*</span></label>
+            <input type="text" name="first_name" maxlength="30" required class="form-control" id="first_name" />
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address">{% trans "Full Address (Street, No., Apto., Postal Code, City, etc.)" %} <span class="required">*</span></label>
+        <textarea name="address" rows="3" cols="60" class="form-control" id="address" required></textarea>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <label for="email">{% trans "Email Address" %} <span class="required">*</span></label>
+            <input type="email" name="email" required class="form-control" id="email"/>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="phone">{% trans "Phone" %} <span class="required">*</span></label>
+            <input type="text" name="phone" maxlength="20" required class="form-control" id="phone"/>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="number_places">{% trans "Number of Places" %} <span class="required">*</span></label><br>
+            <label class="radio-inline">
+              <input type="radio" name="number_places" id="number_places1" value="1" checked="checked"> 1
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="number_places" id="number_places2" value="2"> 2
+            </label>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="form-group">
+            <label for="id_desired_place">{% trans "Desired Location of the Place(s)" %}</label>
+            <textarea name="desired_place" rows="3" cols="60" class="form-control" id="desired_place"></textarea>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
-    <script src="{% static 'js/brocante.js' %}"></script>
-  </body>
-</html>
+    <div class="panel-footer">
+      <button type="submit" class="btn btn-primary btn-lg">
+        <span class="glyphicon glyphicon-send" aria-hidden="true"></span> {% trans "Send" %}
+      </button>
+    </div>
+  </div>
+</form>
+{% endblock%}
