@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-30 06:19+0000\n"
+"POT-Creation-Date: 2017-07-30 07:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,10 +71,8 @@ msgid "Send"
 msgstr "Envoyer"
 
 #: inscription/templates/inscription_submission.html:4
-#, fuzzy
-#| msgid "Enrollment Form"
 msgid "Enrollment Submitted"
-msgstr "Formulaire d'inscription"
+msgstr "Formulaire d'inscription soumis"
 
 #: inscription/templates/inscription_submission.html:6
 msgid ""
@@ -82,8 +80,9 @@ msgid ""
 "it and confirm it according to the availability. You will be notified with "
 "the result."
 msgstr ""
-"Merci d'avoir complété le formulaire d’inscription à la Brocante Bruyères 2017."
-"Nous vous confirmerons par mail votre inscription, selon les possibilités."
+"Merci d'avoir complété le formulaire d’inscription à la Brocante Bruyères "
+"2017.Nous vous confirmerons par mail votre inscription, selon les "
+"possibilités."
 
 #: inscription/templates/inscription_submission.html:8
 msgid "Kind Regards!"
