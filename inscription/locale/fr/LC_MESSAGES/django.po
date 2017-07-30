@@ -47,8 +47,8 @@ msgid "First Name"
 msgstr "Prénom"
 
 #: inscription/templates/inscription.html:25
-msgid "Full Address (Street, No., Apto., Postal Code, City, etc.)"
-msgstr "Adresse postal complète (rue, n°, boîte, code postal, ville, etc.)"
+msgid "Full Address (Street, No., Apto., Postal Code, City)"
+msgstr "Adresse postal complète (rue, n°, boîte, code postal, ville)"
 
 #: inscription/templates/inscription.html:31
 msgid "Email Address"
