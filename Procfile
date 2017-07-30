@@ -1,2 +1,2 @@
-release: python manage.py compilemessages
+release: python manage.py migrate
 web: gunicorn brocante.wsgi --log-file -
