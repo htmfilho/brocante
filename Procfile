@@ -1,2 +1,2 @@
-release: python manage.py migrate
-web: gunicorn brocante.wsgi
+release: ./release-tasks.sh
+web: gunicorn brocante.wsgi --log-file -
