@@ -6,7 +6,7 @@ An utterly fantastic project starter template for Django 1.11.
 
 - Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
 - Enhancements to Django's static file serving functionality via WhiteNoise.
-- Latest Python 3.6 runtime environment. 
+- Latest Python 3.6 runtime environment.
 
 ## How to Use
 
@@ -36,6 +36,16 @@ You can replace ``helloworld`` with your desired project name.
     $ git push heroku master
 
     $ heroku run python manage.py migrate
+
+### Translation Files
+
+    $ brew install gettext
+    $ brew upgrade gettext
+    $ echo 'export PATH="/usr/local/opt/gettext/bin:$PATH"' >> ~/.bash_profile
+    $ python manage.py makemessages
+    $ python manage.py compilemessages
+    $ heroku run python manage.py compilemessages
+
 
 See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
 

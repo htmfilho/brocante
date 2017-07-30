@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-29 21:28+0000\n"
+"POT-Creation-Date: 2017-07-30 06:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,37 +34,64 @@ msgstr "Liste d'attente"
 msgid "Enrollment Form"
 msgstr "Formulaire d'inscription"
 
-#: inscription/templates/inscription.html:12
+#: inscription/templates/inscription.html:6
+msgid "Required"
+msgstr "Obligatoire"
+
+#: inscription/templates/inscription.html:13
 msgid "Last Name"
 msgstr "Nom"
 
-#: inscription/templates/inscription.html:18
+#: inscription/templates/inscription.html:19
 msgid "First Name"
 msgstr "Prénom"
 
-#: inscription/templates/inscription.html:24
+#: inscription/templates/inscription.html:25
 msgid "Full Address (Street, No., Apto., Postal Code, City, etc.)"
 msgstr "Adresse postal complète (rue, n°, boîte, code postal, ville, etc.)"
 
-#: inscription/templates/inscription.html:30
+#: inscription/templates/inscription.html:31
 msgid "Email Address"
 msgstr "Adresse email"
 
-#: inscription/templates/inscription.html:36
+#: inscription/templates/inscription.html:37
 msgid "Phone"
 msgstr "Téléphone"
 
-#: inscription/templates/inscription.html:44
+#: inscription/templates/inscription.html:45
 msgid "Number of Places"
 msgstr "Nombre d'emplacements"
 
-#: inscription/templates/inscription.html:55
+#: inscription/templates/inscription.html:56
 msgid "Desired Location of the Place(s)"
 msgstr "Lieu souhaité pour le(s) emplacement(s)"
 
-#: inscription/templates/inscription.html:63
+#: inscription/templates/inscription.html:64
 msgid "Send"
 msgstr "Envoyer"
+
+#: inscription/templates/inscription_submission.html:4
+#, fuzzy
+#| msgid "Enrollment Form"
+msgid "Enrollment Submitted"
+msgstr "Formulaire d'inscription"
+
+#: inscription/templates/inscription_submission.html:6
+msgid ""
+"Thanks for submitting your demand to Brocante Bruyères 2017. We will analyse "
+"it and confirm it according to the availability. You will be notified with "
+"the result."
+msgstr ""
+"Merci d'avoir complété le formulaire d’inscription à la Brocante Bruyères 2017."
+"Nous vous confirmerons par mail votre inscription, selon les possibilités."
+
+#: inscription/templates/inscription_submission.html:8
+msgid "Kind Regards!"
+msgstr "Bien à vous,"
+
+#: inscription/templates/inscription_submission.html:10
+msgid "Flea's team"
+msgstr "L'équipe organisatrice"
 
 #: inscription/templates/layout.html:10 inscription/templates/layout.html:18
 msgid "Flea Market"
