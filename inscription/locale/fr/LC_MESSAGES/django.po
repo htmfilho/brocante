@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-30 07:50+0000\n"
+"POT-Creation-Date: 2017-07-30 15:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,42 @@ msgstr "Confirmé"
 msgid "Waiting List"
 msgstr "Liste d'attente"
 
+#: inscription/models.py:18 inscription/templates/inscription.html:19
+msgid "First Name"
+msgstr "Prénom"
+
+#: inscription/models.py:19 inscription/templates/inscription.html:13
+msgid "Last Name"
+msgstr "Nom"
+
+#: inscription/models.py:20
+msgid "Address"
+msgstr "Adresse"
+
+#: inscription/models.py:21
+msgid "Email"
+msgstr "Email"
+
+#: inscription/models.py:22 inscription/templates/inscription.html:37
+msgid "Phone"
+msgstr "Téléphone"
+
+#: inscription/models.py:23
+msgid "Places"
+msgstr "Places"
+
+#: inscription/models.py:24
+msgid "Desired Place"
+msgstr "Lieu souhaité"
+
+#: inscription/models.py:25
+msgid "Status"
+msgstr "Statut"
+
+#: inscription/models.py:26
+msgid "Registered"
+msgstr "Enregistré"
+
 #: inscription/templates/inscription.html:4
 msgid "Enrollment Form"
 msgstr "Formulaire d'inscription"
@@ -38,14 +74,6 @@ msgstr "Formulaire d'inscription"
 msgid "Required"
 msgstr "Obligatoire"
 
-#: inscription/templates/inscription.html:13
-msgid "Last Name"
-msgstr "Nom"
-
-#: inscription/templates/inscription.html:19
-msgid "First Name"
-msgstr "Prénom"
-
 #: inscription/templates/inscription.html:25
 msgid "Full Address (Street, No., Apto., Postal Code, City)"
 msgstr "Adresse postal complète (rue, n°, boîte, code postal, ville)"
@@ -53,10 +81,6 @@ msgstr "Adresse postal complète (rue, n°, boîte, code postal, ville)"
 #: inscription/templates/inscription.html:31
 msgid "Email Address"
 msgstr "Adresse email"
-
-#: inscription/templates/inscription.html:37
-msgid "Phone"
-msgstr "Téléphone"
 
 #: inscription/templates/inscription.html:45
 msgid "Number of Places"
@@ -72,17 +96,11 @@ msgstr "Envoyer"
 
 #: inscription/templates/inscription_submission.html:4
 msgid "Enrollment Submitted"
-msgstr "Formulaire d'inscription soumis"
+msgstr "Formulaire d'inscription envoyé!"
 
 #: inscription/templates/inscription_submission.html:6
-msgid ""
-"Thanks for submitting your demand to Brocante Bruyères 2017. We will analyse "
-"it and confirm it according to the availability. You will be notified with "
-"the result."
-msgstr ""
-"Merci d'avoir complété le formulaire d’inscription à la Brocante Bruyères "
-"2017.Nous vous confirmerons par mail votre inscription, selon les "
-"possibilités."
+msgid "We have received your registration form."
+msgstr "Nous avons bien reçu votre formulaire d’inscription."
 
 #: inscription/templates/inscription_submission.html:8
 msgid "Kind Regards!"
