@@ -1,72 +1,103 @@
 {% extends 'layout.html' %}
 {% load i18n %}
 {% block content %}
-<h2>{% trans "Enrollment Form" %}</h2>
-<form action="{% url 'inscription' %}" method="post">
-  <p class="required">* {% trans "Required" %}</p>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      {% csrf_token %}
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="last_name">{% trans "Last Name" %} <span class="required">*</span></label>
-            <input type="text" name="last_name" maxlength="30" required class="form-control" id="last_name" />
+  <h2>{% trans "Enrollment Form" %}</h2>
+  <form id="inscription_form" action="{% url 'inscription' %}" method="post">
+    <p class="required">* {% trans "Required" %}</p>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="last_name">{% trans "Last Name" %} <span class="required">*</span></label>
+              <input type="text" name="last_name" minlength="2" maxlength="30" required class="form-control" id="last_name" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="first_name">{% trans "First Name" %} <span class="required">*</span></label>
+              <input type="text" name="first_name" minlength="2" maxlength="30" required class="form-control" id="first_name" />
+            </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="first_name">{% trans "First Name" %} <span class="required">*</span></label>
-            <input type="text" name="first_name" maxlength="30" required class="form-control" id="first_name" />
+        <div class="form-group">
+          <label for="address">{% trans "Full Address (Street, No., Apto., Postal Code, City)" %} <span class="required">*</span></label>
+          <textarea name="address" rows="3" cols="60" class="form-control" id="address" required></textarea>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="form-group">
+              <label for="email">{% trans "Email Address" %} <span class="required">*</span></label>
+              <input type="email" name="email" maxlength="100" required class="form-control" id="email"/>
+              <span id="email_message"></span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="phone">{% trans "Phone" %} <span class="required">*</span></label>
+              <input type="text" name="phone" maxlength="20" required class="form-control" id="phone"/>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="number_places">{% trans "Number of Places" %} <span class="required">*</span></label><br>
+              <label class="radio-inline">
+                <input type="radio" name="number_places" id="number_places1" value="1" checked="checked"> 1
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="number_places" id="number_places2" value="2"> 2
+              </label>
+              <br><br>
+              <p>{% trans "1 slot = about 2,50m/4,50m" %}<br>
+              {% trans "1 slot = €8 payment on site" %}</p>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="form-group">
+              <label for="id_desired_place">{% trans "Desired Location of the Place(s)" %}</label>
+              <textarea name="desired_place" rows="3" cols="60" class="form-control" id="desired_place"></textarea>
+            </div>
           </div>
         </div>
       </div>
-      <div class="form-group">
-        <label for="address">{% trans "Full Address (Street, No., Apto., Postal Code, City)" %} <span class="required">*</span></label>
-        <textarea name="address" rows="3" cols="60" class="form-control" id="address" required></textarea>
-      </div>
-      <div class="row">
-        <div class="col-md-8">
-          <div class="form-group">
-            <label for="email">{% trans "Email Address" %} <span class="required">*</span></label>
-            <input type="email" name="email" required class="form-control" id="email"/>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="phone">{% trans "Phone" %} <span class="required">*</span></label>
-            <input type="text" name="phone" maxlength="20" required class="form-control" id="phone"/>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="form-group">
-            <label for="number_places">{% trans "Number of Places" %} <span class="required">*</span></label><br>
-            <label class="radio-inline">
-              <input type="radio" name="number_places" id="number_places1" value="1" checked="checked"> 1
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="number_places" id="number_places2" value="2"> 2
-            </label>
-            <br><br>
-            <p>1 emplacement = environ 2,50m/4,50m<br>
-            1 emplacement = €8 paiement sur place</p>
-          </div>
-        </div>
-        <div class="col-md-9">
-          <div class="form-group">
-            <label for="id_desired_place">{% trans "Desired Location of the Place(s)" %}</label>
-            <textarea name="desired_place" rows="3" cols="60" class="form-control" id="desired_place"></textarea>
-          </div>
-        </div>
+      <div class="panel-footer">
+        <button type="submit" class="btn btn-primary btn-lg">
+          <span class="glyphicon glyphicon-send" aria-hidden="true"></span> {% trans "Send" %}
+        </button>
       </div>
     </div>
-    <div class="panel-footer">
-      <button type="submit" class="btn btn-primary btn-lg">
-        <span class="glyphicon glyphicon-send" aria-hidden="true"></span> {% trans "Send" %}
-      </button>
-    </div>
-  </div>
-</form>
+  </form>
 {% endblock%}
+
+{% block script %}
+  <script>
+    $(function () {
+      $("#inscription_form").validate();
+    });
+
+    var email_exists = true;
+
+    $('#email').change(function() {
+        $.ajax({
+            url: "/email?em=" + $(this).val()
+        }).done(function(data) {
+            if(data != true) {
+                email_exists = false;
+                $('#email').removeClass("error");
+                $('#email_message').removeClass("error-message").text("");
+            } else {
+                email_exists = true;
+                $('#email').addClass("error");
+                $('#email_message').addClass("error-message").text("{% trans "This email already exists." %}");
+            }
+        });
+    });
+
+    $("#inscription_form").submit(function( event ) {
+      return !email_exists;
+    });
+  </script>
+{% endblock %}

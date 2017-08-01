@@ -21,6 +21,6 @@ class Inscription(models.Model):
     email = models.EmailField(verbose_name=_("Email"))
     phone = models.CharField(max_length=20, verbose_name=_("Phone"))
     number_places = models.IntegerField(verbose_name=_("Places"))
-    desired_place = models.TextField(verbose_name=_("Desired Place"))
+    desired_place = models.TextField(verbose_name=_("Desired Place"), blank=True, null=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='NOT_CONFIRMED', verbose_name=_("Status"))
     registered = models.DateTimeField(null=True, auto_now=True, verbose_name=_("Registered"))

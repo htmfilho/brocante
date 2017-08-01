@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-30 15:39+0000\n"
+"POT-Creation-Date: 2017-08-01 15:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr "Adresse"
 msgid "Email"
 msgstr "Email"
 
-#: inscription/models.py:22 inscription/templates/inscription.html:37
+#: inscription/models.py:22 inscription/templates/inscription.html:38
 msgid "Phone"
 msgstr "Téléphone"
 
@@ -82,17 +82,29 @@ msgstr "Adresse postal complète (rue, n°, boîte, code postal, ville)"
 msgid "Email Address"
 msgstr "Adresse email"
 
-#: inscription/templates/inscription.html:45
+#: inscription/templates/inscription.html:46
 msgid "Number of Places"
 msgstr "Nombre d'emplacements"
 
-#: inscription/templates/inscription.html:56
+#: inscription/templates/inscription.html:54
+msgid "1 slot = about 2,50m/4,50m"
+msgstr "1 emplacement = environ 2,50m/4,50m"
+
+#: inscription/templates/inscription.html:55
+msgid "1 slot = €8 payment on site"
+msgstr "1 emplacement = €8 paiement sur place"
+
+#: inscription/templates/inscription.html:60
 msgid "Desired Location of the Place(s)"
 msgstr "Lieu souhaité pour le(s) emplacement(s)"
 
-#: inscription/templates/inscription.html:64
+#: inscription/templates/inscription.html:68
 msgid "Send"
 msgstr "Envoyer"
+
+#: inscription/templates/inscription.html:94
+msgid "This email already exists."
+msgstr "Cet email existe déjà."
 
 #: inscription/templates/inscription_submission.html:4
 msgid "Enrollment Submitted"
@@ -110,6 +122,6 @@ msgstr "Bien à vous,"
 msgid "Flea's team"
 msgstr "L'équipe organisatrice"
 
-#: inscription/templates/layout.html:10 inscription/templates/layout.html:18
+#: inscription/templates/layout.html:10 inscription/templates/layout.html:20
 msgid "Flea Market"
 msgstr "La brocante Bruyères 2017"
