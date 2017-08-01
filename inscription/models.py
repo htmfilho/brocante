@@ -30,14 +30,14 @@ class Inscription(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='NOT_CONFIRMED', verbose_name=_("Status"))
     registered = models.DateTimeField(null=True, auto_now=True, verbose_name=_("Registered"))
 
-#    def save(self, *args, **kwargs):
-#        if self.status == 'CONFIRMED':
-#            subject = _('Enrollment Confirmed')
-#            template = loader.get_template('messages/inscription_confirmation_fr.eml')
-#            context = {'user': "{} {}".format(self.first_name, self.last_name),
-#                       'places': _("1 slot") if self.number_places == 1 else _("2 slots")}
-#            recipients = [self.email]
-#            post_officer.send_message(recipients, subject, template.render(context))
-#
-#        super(Inscription, self).save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        if self.status == 'CONFIRMED':
+            subject = _('Enrollment Confirmed')
+            template = loader.get_template('messages/inscription_confirmation_fr.eml')
+            context = {'user': "{} {}".format(self.first_name, self.last_name),
+                       'places': _("1 slot") if self.number_places == 1 else _("2 slots")}
+            recipients = [self.email]
+            post_officer.send_message(recipients, subject, template.render(context))
+
+        super(Inscription, self).save(*args, **kwargs)
 

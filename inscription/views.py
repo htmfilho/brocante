@@ -16,11 +16,11 @@ def inscription(request):
         if form.is_valid():
             form.save()
 
-            #subject = _('Enrollment Submission Confirmed')
-            #template = loader.get_template('messages/inscription_submission_confirmation_fr.eml')
-            #context = {'user': "{} {}".format(form.cleaned_data['first_name'], form.cleaned_data['last_name'])}
-            #recipients = [form.cleaned_data['email']]
-            #post_officer.send_message(recipients, subject, template.render(context))
+            subject = _('Enrollment Submission Confirmed')
+            template = loader.get_template('messages/inscription_submission_confirmation_fr.eml')
+            context = {'user': "{} {}".format(form.cleaned_data['first_name'], form.cleaned_data['last_name'])}
+            recipients = [form.cleaned_data['email']]
+            post_officer.send_message(recipients, subject, template.render(context))
 
             return HttpResponseRedirect(reverse('inscription_submission'))
         else:
