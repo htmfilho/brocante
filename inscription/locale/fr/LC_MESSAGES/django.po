@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-01 15:25+0000\n"
+"POT-Creation-Date: 2017-08-01 22:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,53 +18,65 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: inscription/models.py:14
+#: inscription/models.py:19
 msgid "Not Confirmed"
 msgstr "Non confirmé"
 
-#: inscription/models.py:15
+#: inscription/models.py:20
 msgid "Confirmed"
 msgstr "Confirmé"
 
-#: inscription/models.py:16
+#: inscription/models.py:21
 msgid "Waiting List"
 msgstr "Liste d'attente"
 
-#: inscription/models.py:18 inscription/templates/inscription.html:19
+#: inscription/models.py:23 inscription/templates/inscription.html:19
 msgid "First Name"
 msgstr "Prénom"
 
-#: inscription/models.py:19 inscription/templates/inscription.html:13
+#: inscription/models.py:24 inscription/templates/inscription.html:13
 msgid "Last Name"
 msgstr "Nom"
 
-#: inscription/models.py:20
+#: inscription/models.py:25
 msgid "Address"
 msgstr "Adresse"
 
-#: inscription/models.py:21
+#: inscription/models.py:26
 msgid "Email"
 msgstr "Email"
 
-#: inscription/models.py:22 inscription/templates/inscription.html:38
+#: inscription/models.py:27 inscription/templates/inscription.html:38
 msgid "Phone"
 msgstr "Téléphone"
 
-#: inscription/models.py:23
+#: inscription/models.py:28
 msgid "Places"
 msgstr "Places"
 
-#: inscription/models.py:24
+#: inscription/models.py:29
 msgid "Desired Place"
 msgstr "Lieu souhaité"
 
-#: inscription/models.py:25
+#: inscription/models.py:30
 msgid "Status"
 msgstr "Statut"
 
-#: inscription/models.py:26
+#: inscription/models.py:31
 msgid "Registered"
 msgstr "Enregistré"
+
+#: inscription/models.py:35
+msgid "Enrollment Confirmed"
+msgstr "Inscription confirmé"
+
+#: inscription/models.py:38
+msgid "1 slot"
+msgstr "1 emplacement"
+
+#: inscription/models.py:38
+msgid "2 slots"
+msgstr "2 emplacements"
 
 #: inscription/templates/inscription.html:4
 msgid "Enrollment Form"
@@ -92,7 +104,7 @@ msgstr "1 emplacement = environ 2,50m/4,50m"
 
 #: inscription/templates/inscription.html:55
 msgid "1 slot = €8 payment on site"
-msgstr "1 emplacement = €8 paiement sur place"
+msgstr "1 emplacement = 8€ paiement sur place"
 
 #: inscription/templates/inscription.html:60
 msgid "Desired Location of the Place(s)"
@@ -125,3 +137,7 @@ msgstr "L'équipe organisatrice"
 #: inscription/templates/layout.html:10 inscription/templates/layout.html:20
 msgid "Flea Market"
 msgstr "La brocante Bruyères 2017"
+
+#: inscription/views.py:19
+msgid "Enrollment Submission Confirmed"
+msgstr "Reception d'inscription confirmé"
