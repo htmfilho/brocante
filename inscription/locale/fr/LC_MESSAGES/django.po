@@ -140,4 +140,4 @@ msgstr "La brocante Bruyères 2017"
 
 #: inscription/views.py:19
 msgid "Enrollment Submission Confirmed"
-msgstr "Reception d'inscription confirmé"
+msgstr "Inscription reçue"
