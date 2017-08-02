@@ -135,7 +135,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'brocante.bruyeres.en.musique@gmail.com'
-EMAIL_HOST_PASSWORD = 'inscriptions'
+EMAIL_HOST_USER = 'AKIAJNUTVIJAO6VVCTTA'
+EMAIL_HOST_PASSWORD = 'AhM8ZrH8h+3uyYv56uqqxrTAP71d3lBTqcWB/3jKUIaV'

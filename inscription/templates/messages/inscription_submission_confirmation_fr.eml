@@ -1,5 +1,4 @@
 {% autoescape off %}
-
 Bonjour {{ user }},
 
 Merci d'avoir complété le formulaire d’inscription à la Brocante Bruyères 2017.
@@ -9,5 +8,4 @@ Merci!
 
 L’équipe organisatrice
 Brocante Bruyères
-
 {% endautoescape %}
