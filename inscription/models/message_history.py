@@ -1,10 +1,20 @@
 from django.contrib import admin
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
+
+
+SUBMISSION_CONFIRMATION = 'SUBMISSION_CONFIRMATION'
+INSCRIPTION_CONFIRMATION = 'INSCRIPTION_CONFIRMATION'
+
+
+TYPE_CHOICES = (
+        (SUBMISSION_CONFIRMATION, _('Submission Confirmation')),
+        (INSCRIPTION_CONFIRMATION, _('Inscription Confirmation')))
 
 
 class MessageHistoryAdmin(admin.ModelAdmin):
-    list_display = ('recipients', 'subject', 'sent_date')
-    fieldsets = ((None, {'fields': ('recipients', 'subject', 'message')}),)
+    list_display = ('recipients', 'subject', 'sent_date', 'type')
+    fieldsets = ((None, {'fields': ('recipients', 'subject', 'message', 'type')}),)
     search_fields = ['subject', 'content', 'inscription']
 
 
@@ -13,3 +23,8 @@ class MessageHistory(models.Model):
     message = models.TextField()
     recipients = models.CharField(max_length=100)
     sent_date = models.DateTimeField(auto_now=True)
+    type = models.CharField(max_length=30, choices=TYPE_CHOICES, default=INSCRIPTION_CONFIRMATION)
+
+
+def find_messages(recipient, a_type):
+    return MessageHistory.objects.filter(recipients=recipient).filter(type=a_type)
