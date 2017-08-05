@@ -2,6 +2,13 @@
 {% load i18n %}
 {% block content %}
   <h2>{% trans "Enrollment Form" %}</h2>
+
+  {% if total_places_reached %}
+    <div class="alert alert-warning" role="alert">
+      <strong>{% trans "Warning!" %}</strong>
+      {% trans 'All slots are reserved for the moment. If you decide to continue you will be added to the waiting list.' %}</div>
+  {% endif %}
+
   <form id="inscription_form" action="{% url 'inscription' %}" method="post">
     <p class="required">* {% trans "Required" %}</p>
     <div class="panel panel-default">

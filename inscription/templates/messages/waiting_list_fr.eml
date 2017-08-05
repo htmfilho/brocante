@@ -1,0 +1,14 @@
+{% autoescape off %}
+Bonjour {{ user }},
+
+Merci d'avoir complété le formulaire d’inscription à la Brocante Bruyères 2017.
+
+Malheureusement, tous les emplacements sont réservés, mais vous êtes dans une liste d'attente.
+
+En cas de désistement, nous appellerons la liste d'attente en ordre cronologique.
+
+Cordialement,
+
+L’équipe organisatrice
+Brocante Bruyères
+{% endautoescape %}

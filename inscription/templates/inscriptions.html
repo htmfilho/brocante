@@ -1,12 +1,7 @@
 {% extends 'layout.html' %}
 {% load i18n %}
 {% block content %}
-<h2>{% trans "Enrollment Submitted" %}</h2>
+<h2>{% trans "Inscriptions" %}</h2>
 
-<p class="lead">{% trans "We have received your registration form." %}</p>
-
-<p class="lead">{% trans "Kind Regards!" %}</p>
-
-<p class="lead">{% trans "Flea's team" %}</p>
-
+<p>{% trans "Total of Demanded Places:" %} {{ total_demanded_places }}</p>
 {% endblock%}

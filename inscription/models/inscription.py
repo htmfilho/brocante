@@ -10,6 +10,8 @@ CONFIRMED = 'CONFIRMED'
 WAITING_LIST = 'WAITING_LIST'
 CANCELED = 'CANCELED'
 
+TOTAL_PLACES = 250
+
 STATUS_CHOICES = (
         (NOT_CONFIRMED, _('Not Confirmed')),
         (CONFIRMED, _('Confirmed')),
@@ -38,18 +40,37 @@ class Inscription(models.Model):
     registered = models.DateTimeField(null=True, auto_now=True, verbose_name=_("Registered"))
 
     def save(self, *args, **kwargs):
-        send_email_when_confirmed(self)
+        send_email_when_registering(self)
         super(Inscription, self).save(*args, **kwargs)
+        send_email_when_confirmed(self)
 
     def __str__(self):
         return "{} {} - {}".format(self.first_name, self.last_name, self.number_places)
+
+
+def send_email_when_registering(inscription):
+    if not inscription.pk:
+        if is_total_places_reached(getattr(inscription, 'number_places')):
+            inscription.status = WAITING_LIST
+            subject = _('Enrollment submission in waiting list')
+            template = loader.get_template('messages/waiting_list_fr.eml')
+            context = {'user': "{} {}".format(inscription.first_name, inscription.last_name)}
+            recipients = [inscription.email]
+            post_officer.send_message(recipients, subject, template.render(context), message_history.WAITING_LIST)
+        else:
+            subject = _('Enrollment Submission Confirmed')
+            template = loader.get_template('messages/submission_confirmation_fr.eml')
+            context = {'user': "{} {}".format(inscription.first_name, inscription.last_name)}
+            recipients = [inscription.email]
+            post_officer.send_message(recipients, subject, template.render(context),
+                                      message_history.SUBMISSION_CONFIRMATION)
 
 
 def send_email_when_confirmed(inscription):
     messages = message_history.find_messages(inscription.email, message_history.INSCRIPTION_CONFIRMATION).count()
     if inscription.email and inscription.status == CONFIRMED and messages == 0:
         subject = _('Enrollment Confirmed')
-        template = loader.get_template('messages/inscription_confirmation_fr.eml')
+        template = loader.get_template('messages/confirmation_fr.eml')
         context = {'user': "{} {}".format(inscription.first_name, inscription.last_name),
                    'places': _("1 slot") if inscription.number_places == 1 else _("2 slots")}
         recipients = [inscription.email]
@@ -57,10 +78,14 @@ def send_email_when_confirmed(inscription):
 
 
 def find_total_demanded_places():
-    sum_number_places = Inscription.objects.exclude(status=CANCELED)\
-                                   .exclude(status=WAITING_LIST)\
+    sum_number_places = Inscription.objects.exclude(status=CANCELED).exclude(status=WAITING_LIST)\
                                    .aggregate(models.Sum('number_places'))
-    if sum_number_places is not None:
+    if sum_number_places['number_places__sum']:
         return sum_number_places['number_places__sum']
     else:
         return 0
+
+
+def is_total_places_reached(current_demand=0):
+    existing_demand = find_total_demanded_places()
+    return (existing_demand + current_demand) >= TOTAL_PLACES

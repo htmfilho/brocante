@@ -5,11 +5,13 @@ from django.utils.translation import ugettext_lazy as _
 
 SUBMISSION_CONFIRMATION = 'SUBMISSION_CONFIRMATION'
 INSCRIPTION_CONFIRMATION = 'INSCRIPTION_CONFIRMATION'
+WAITING_LIST = 'WAITING_LIST'
 
 
 TYPE_CHOICES = (
         (SUBMISSION_CONFIRMATION, _('Submission Confirmation')),
-        (INSCRIPTION_CONFIRMATION, _('Inscription Confirmation')))
+        (INSCRIPTION_CONFIRMATION, _('Inscription Confirmation')),
+        (WAITING_LIST, _('Waiting List')))
 
 
 class MessageHistoryAdmin(admin.ModelAdmin):
