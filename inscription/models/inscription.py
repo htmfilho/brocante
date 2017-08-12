@@ -78,8 +78,8 @@ def send_email_when_confirmed(inscription):
         post_officer.send_message(recipients, subject, template.render(context), message_history.INSCRIPTION_CONFIRMATION)
 
 
-def find_all():
-    return Inscription.objects.all()
+def find_confirmed_inscriptions():
+    return Inscription.objects.filter(status=CONFIRMED)
 
 
 def get_total_confirmed_places():

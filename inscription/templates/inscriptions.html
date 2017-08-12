@@ -17,18 +17,16 @@
         <th>{% trans "Phone" %}</th>
         <th>{% trans "Places" %}</th>
         <th>{% trans "Desired Place" %}</th>
-        <th>{% trans "Status" %}</th>
     </tr>
     {% for inscription in inscriptions %}
-    <tr>
-        <td>{{ inscription.last_name }}</td>
-        <td>{{ inscription.first_name }}</td>
-        <td>{{ inscription.address }}</td>
-        <td>{{ inscription.phone }}</td>
-        <td>{{ inscription.number_places }}</td>
-        <td>{{ inscription.desired_place }}</td>
-        <td>{{ inscription.status }}</td>
-    </tr>
+        <tr>
+            <td>{{ inscription.last_name }}</td>
+            <td>{{ inscription.first_name }}</td>
+            <td>{{ inscription.address }}</td>
+            <td>{{ inscription.phone }}</td>
+            <td>{{ inscription.number_places }}</td>
+            <td>{{ inscription.desired_place }}</td>
+        </tr>
     {% endfor %}
 </table>
 

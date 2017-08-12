@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-05 15:06+0000\n"
+"POT-Creation-Date: 2017-08-12 07:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,62 +35,68 @@ msgstr "Liste d'attente"
 msgid "Canceled"
 msgstr "Annulé"
 
-#: inscription/models/inscription.py:32
+#: inscription/models/inscription.py:33
 #: inscription/templates/inscription.html:26
+#: inscription/templates/inscriptions.html:15
 msgid "First Name"
 msgstr "Prénom"
 
-#: inscription/models/inscription.py:33
+#: inscription/models/inscription.py:34
 #: inscription/templates/inscription.html:20
+#: inscription/templates/inscriptions.html:14
 msgid "Last Name"
 msgstr "Nom"
 
-#: inscription/models/inscription.py:34
+#: inscription/models/inscription.py:35
+#: inscription/templates/inscriptions.html:16
 msgid "Address"
 msgstr "Adresse"
 
-#: inscription/models/inscription.py:35
+#: inscription/models/inscription.py:36
 msgid "Email"
 msgstr "Email"
 
-#: inscription/models/inscription.py:36
+#: inscription/models/inscription.py:37
 #: inscription/templates/inscription.html:45
+#: inscription/templates/inscriptions.html:17
 msgid "Phone"
 msgstr "Téléphone"
 
-#: inscription/models/inscription.py:37
+#: inscription/models/inscription.py:38
+#: inscription/templates/inscriptions.html:18
 msgid "Places"
 msgstr "Places"
 
-#: inscription/models/inscription.py:38
+#: inscription/models/inscription.py:39
+#: inscription/templates/inscriptions.html:19
 msgid "Desired Place"
 msgstr "Lieu souhaité"
 
-#: inscription/models/inscription.py:39
+#: inscription/models/inscription.py:40
 msgid "Status"
 msgstr "Statut"
 
-#: inscription/models/inscription.py:40
+#: inscription/models/inscription.py:41
 msgid "Registered"
 msgstr "Enregistrée"
 
-#: inscription/models/inscription.py:55
+#: inscription/models/inscription.py:56
 msgid "Enrollment submission in waiting list"
 msgstr "Inscription dans la liste d'attente"
 
-#: inscription/models/inscription.py:61
+#: inscription/models/inscription.py:62
 msgid "Enrollment Submission Confirmed"
 msgstr "Inscription reçue"
 
-#: inscription/models/inscription.py:72
+#: inscription/models/inscription.py:73
 msgid "Enrollment Confirmed"
 msgstr "Inscription confirmée"
 
-#: inscription/models/inscription.py:75
+#: inscription/models/inscription.py:76
 msgid "1 slot"
 msgstr "1 emplacement"
 
-#: inscription/models/inscription.py:75
+#: inscription/models/inscription.py:76
 msgid "2 slots"
 msgstr "2 emplacements"
 
@@ -114,7 +120,9 @@ msgstr "Attention!"
 msgid ""
 "All slots are reserved for the moment. If you decide to continue you will be "
 "added to the waiting list."
-msgstr "Tous les emplacements sont réservés pour le moment. Si vous décidez de continuer, vous serez ajouté à la liste d'attente."
+msgstr ""
+"Tous les emplacements sont réservés pour le moment. Si vous décidez de "
+"continuer, vous serez ajouté à la liste d'attente."
 
 #: inscription/templates/inscription.html:13
 msgid "Required"
@@ -172,9 +180,17 @@ msgstr "L'équipe organisatrice"
 msgid "Inscriptions"
 msgstr "Inscriptions"
 
-#: inscription/templates/inscriptions.html:6
-msgid "Total of Demanded Places:"
-msgstr "Total d'emplacement réservés"
+#: inscription/templates/inscriptions.html:7
+msgid "Total Inscriptions"
+msgstr "Total d'inscriptions"
+
+#: inscription/templates/inscriptions.html:8
+msgid "Total of Demanded Places"
+msgstr "Total d'emplacements réservés"
+
+#: inscription/templates/inscriptions.html:9
+msgid "Total of Confirmed Places"
+msgstr "Total d'emplacements confirmés"
 
 #: inscription/templates/layout.html:10 inscription/templates/layout.html:20
 msgid "Flea Market"

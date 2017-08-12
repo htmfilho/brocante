@@ -8,5 +8,5 @@ from inscription.models import inscription
 def inscriptions_view(request):
     total_demanded_places = inscription.get_total_demanded_places()
     total_confirmed_places = inscription.get_total_confirmed_places()
-    inscriptions = inscription.find_all()
+    inscriptions = inscription.find_confirmed_inscriptions()
     return render(request, "inscriptions.html", locals())
