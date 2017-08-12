@@ -20,8 +20,9 @@ STATUS_CHOICES = (
 
 
 class InscriptionAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'status', 'address', 'email', 'phone', 'number_places', 'desired_place',
+    list_display = ('last_name', 'first_name', 'status', 'address', 'email', 'phone', 'number_places', 'desired_place',
                     'registered')
+    ordering = ('last_name',)
     list_filter = ('status',)
     fieldsets = ((None, {'fields': ('last_name', 'first_name', 'status', 'address', 'email', 'phone', 'number_places',
                                     'desired_place')}),)
