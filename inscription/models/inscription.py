@@ -10,7 +10,7 @@ CONFIRMED = 'CONFIRMED'
 WAITING_LIST = 'WAITING_LIST'
 CANCELED = 'CANCELED'
 
-TOTAL_PLACES = 250
+TOTAL_PLACES = 230
 
 STATUS_CHOICES = (
         (NOT_CONFIRMED, _('Not Confirmed')),
@@ -22,7 +22,6 @@ STATUS_CHOICES = (
 class InscriptionAdmin(admin.ModelAdmin):
     list_display = ('last_name', 'first_name', 'status', 'address', 'email', 'phone', 'number_places', 'desired_place',
                     'registered')
-    ordering = ('last_name',)
     list_filter = ('status',)
     fieldsets = ((None, {'fields': ('last_name', 'first_name', 'status', 'address', 'email', 'phone', 'number_places',
                                     'desired_place')}),)
@@ -79,7 +78,7 @@ def send_email_when_confirmed(inscription):
 
 
 def find_confirmed_inscriptions():
-    return Inscription.objects.filter(status=CONFIRMED)
+    return Inscription.objects.filter(status=CONFIRMED).order_by('last_name')
 
 
 def get_total_confirmed_places():

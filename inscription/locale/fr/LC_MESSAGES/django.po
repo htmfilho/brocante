@@ -122,7 +122,8 @@ msgid ""
 "added to the waiting list."
 msgstr ""
 "Tous les emplacements sont réservés pour le moment. Si vous décidez de "
-"continuer, vous serez ajouté à la liste d'attente."
+"continuer, vous serez ajouté à la liste d'attente. <br> Dans ce cas, veuillez compléter le formulaire ci-dessous et "
+"nous le renvoyer."
 
 #: inscription/templates/inscription.html:13
 msgid "Required"
