@@ -3,5 +3,33 @@
 {% block content %}
 <h2>{% trans "Inscriptions" %}</h2>
 
-<p>{% trans "Total of Demanded Places:" %} {{ total_demanded_places }}</p>
+<div class="row">
+    <div class="col-md-4"><b>{% trans "Total Inscriptions" %}:</b> {{ inscriptions | length }}</div>
+    <div class="col-md-4"><b>{% trans "Total of Demanded Places" %}:</b> {{ total_demanded_places }}</div>
+    <div class="col-md-4"><b>{% trans "Total of Confirmed Places" %}:</b> {{ total_confirmed_places }}</div>
+</div>
+<br>
+<table class="table">
+    <tr>
+        <th>{% trans "Last Name" %}</th>
+        <th>{% trans "First Name" %}</th>
+        <th>{% trans "Address" %}</th>
+        <th>{% trans "Phone" %}</th>
+        <th>{% trans "Places" %}</th>
+        <th>{% trans "Desired Place" %}</th>
+        <th>{% trans "Status" %}</th>
+    </tr>
+    {% for inscription in inscriptions %}
+    <tr>
+        <td>{{ inscription.last_name }}</td>
+        <td>{{ inscription.first_name }}</td>
+        <td>{{ inscription.address }}</td>
+        <td>{{ inscription.phone }}</td>
+        <td>{{ inscription.places }}</td>
+        <td>{{ inscription.desired_place }}</td>
+        <td>{{ inscription.status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
 {% endblock%}

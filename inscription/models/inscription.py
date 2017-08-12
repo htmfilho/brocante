@@ -78,7 +78,19 @@ def send_email_when_confirmed(inscription):
         post_officer.send_message(recipients, subject, template.render(context), message_history.INSCRIPTION_CONFIRMATION)
 
 
-def find_total_demanded_places():
+def find_all():
+    return Inscription.objects.all()
+
+
+def get_total_confirmed_places():
+    sum_number_places = Inscription.objects.filter(status=CONFIRMED).aggregate(models.Sum('number_places'))
+    if sum_number_places['number_places__sum']:
+        return sum_number_places['number_places__sum']
+    else:
+        return 0
+
+
+def get_total_demanded_places():
     sum_number_places = Inscription.objects.exclude(status=CANCELED).exclude(status=WAITING_LIST)\
                                    .aggregate(models.Sum('number_places'))
     if sum_number_places['number_places__sum']:
@@ -88,5 +100,5 @@ def find_total_demanded_places():
 
 
 def is_total_places_reached(current_demand=0):
-    existing_demand = find_total_demanded_places()
+    existing_demand = get_total_demanded_places()
     return (existing_demand + current_demand) >= TOTAL_PLACES
