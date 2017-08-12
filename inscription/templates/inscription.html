@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% load i18n %}
 {% block content %}
+<div class="container">
   <h2>{% trans "Enrollment Form" %}</h2>
 
   {% if total_places_reached %}
@@ -77,6 +78,7 @@
       </div>
     </div>
   </form>
+</div>
 {% endblock%}
 
 {% block script %}
