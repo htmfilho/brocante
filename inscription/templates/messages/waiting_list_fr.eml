@@ -1,13 +1,15 @@
 {% autoescape off %}
-Bonjour {{ user }},
+Bonjour, cher "Aspirant(e) à la Brocante" ...
 
-Merci d'avoir complété le formulaire d’inscription à la Brocante Bruyères 2017.
+Merci pour votre inscription à notre Brocante du Quartier des Bruyères.
 
-Malheureusement, tous les emplacements sont réservés, mais vous êtes dans une liste d'attente.
+Pour le moment, tous les emplacements sont réservés, mais il ne faut pas désespérer.
 
-En cas de désistement, nous appellerons la liste d'attente en ordre cronologique.
+Nous vous inscrivons dès à présent sur la liste d'attente jusqu'à la libération éventuelle d'un emplacement.
 
-Cordialement,
+Merci de votre compréhension et ...patience !
+
+Bien à vous,
 
 L’équipe organisatrice
 Brocante Bruyères
