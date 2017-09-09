@@ -54,9 +54,8 @@ def send_email_when_registering(inscription):
             inscription.status = WAITING_LIST
             subject = _('Enrollment submission in waiting list')
             template = loader.get_template('messages/waiting_list_fr.eml')
-            context = {'user': "{} {}".format(inscription.first_name, inscription.last_name)}
             recipients = [inscription.email]
-            post_officer.send_message(recipients, subject, template.render(context), message_history.WAITING_LIST)
+            post_officer.send_message(recipients, subject, template.render(), message_history.WAITING_LIST)
         else:
             subject = _('Enrollment Submission Confirmed')
             template = loader.get_template('messages/submission_confirmation_fr.eml')
