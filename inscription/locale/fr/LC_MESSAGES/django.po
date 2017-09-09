@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2017 Hildeberto Mendonça
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FIRST AUTHOR me@hildeberto.com, 2017.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-12 07:47+0000\n"
+"POT-Creation-Date: 2017-09-09 13:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,70 +35,83 @@ msgstr "Liste d'attente"
 msgid "Canceled"
 msgstr "Annulé"
 
-#: inscription/models/inscription.py:33
-#: inscription/templates/inscription.html:26
-#: inscription/templates/inscriptions.html:15
+#: inscription/models/inscription.py:32
+#: inscription/templates/inscription.html:27
+#: inscription/templates/inscriptions.html:16
 msgid "First Name"
 msgstr "Prénom"
 
-#: inscription/models/inscription.py:34
-#: inscription/templates/inscription.html:20
-#: inscription/templates/inscriptions.html:14
+#: inscription/models/inscription.py:33
+#: inscription/templates/inscription.html:21
+#: inscription/templates/inscriptions.html:15
 msgid "Last Name"
 msgstr "Nom"
 
-#: inscription/models/inscription.py:35
-#: inscription/templates/inscriptions.html:16
+#: inscription/models/inscription.py:34
+#: inscription/templates/inscriptions.html:17
 msgid "Address"
 msgstr "Adresse"
 
-#: inscription/models/inscription.py:36
+#: inscription/models/inscription.py:35
 msgid "Email"
 msgstr "Email"
 
-#: inscription/models/inscription.py:37
-#: inscription/templates/inscription.html:45
-#: inscription/templates/inscriptions.html:17
+#: inscription/models/inscription.py:36
+#: inscription/templates/inscription.html:46
+#: inscription/templates/inscriptions.html:18
 msgid "Phone"
 msgstr "Téléphone"
 
-#: inscription/models/inscription.py:38
-#: inscription/templates/inscriptions.html:18
+#: inscription/models/inscription.py:37
+#: inscription/templates/inscriptions.html:19
 msgid "Places"
 msgstr "Places"
 
-#: inscription/models/inscription.py:39
-#: inscription/templates/inscriptions.html:19
+#: inscription/models/inscription.py:38
+#: inscription/templates/inscriptions.html:20
 msgid "Desired Place"
 msgstr "Lieu souhaité"
 
-#: inscription/models/inscription.py:40
+#: inscription/models/inscription.py:39
 msgid "Status"
 msgstr "Statut"
 
-#: inscription/models/inscription.py:41
+#: inscription/models/inscription.py:40
 msgid "Registered"
 msgstr "Enregistrée"
 
-#: inscription/models/inscription.py:56
+#: inscription/models/inscription.py:55
 msgid "Enrollment submission in waiting list"
 msgstr "Inscription dans la liste d'attente"
 
-#: inscription/models/inscription.py:62
+#: inscription/models/inscription.py:61
 msgid "Enrollment Submission Confirmed"
 msgstr "Inscription reçue"
 
-#: inscription/models/inscription.py:73
+#: inscription/models/inscription.py:72
 msgid "Enrollment Confirmed"
 msgstr "Inscription confirmée"
 
-#: inscription/models/inscription.py:76
+#: inscription/models/inscription.py:75
 msgid "1 slot"
 msgstr "1 emplacement"
 
-#: inscription/models/inscription.py:76
+#: inscription/models/inscription.py:75
 msgid "2 slots"
 msgstr "2 emplacements"
+
+#: inscription/models/inscription_slot.py:12
+msgid "Inscription"
+msgstr "Inscription"
+
+#: inscription/models/inscription_slot.py:13
+msgid "Slot"
+msgstr "Emplacement"
+
+#: inscription/models/location.py:12
+#, fuzzy
+msgid "Name"
+msgstr "Nom"
 
 #: inscription/models/message_history.py:12
 msgid "Submission Confirmation"
@@ -108,72 +121,80 @@ msgstr "Confirmation de réception"
 msgid "Inscription Confirmation"
 msgstr "Confirmation d'inscription"
 
-#: inscription/templates/inscription.html:4
+#: inscription/models/slot.py:12
+msgid "Location"
+msgstr "Lieu"
+
+#: inscription/models/slot.py:13
+msgid "Identification"
+msgstr "Identification"
+
+#: inscription/templates/inscription.html:5
 msgid "Enrollment Form"
 msgstr "Formulaire d'inscription"
 
-#: inscription/templates/inscription.html:8
+#: inscription/templates/inscription.html:9
 msgid "Warning!"
 msgstr "Attention!"
 
-#: inscription/templates/inscription.html:9
+#: inscription/templates/inscription.html:10
 msgid ""
 "All slots are reserved for the moment. If you decide to continue you will be "
 "added to the waiting list."
 msgstr ""
 "Tous les emplacements sont réservés pour le moment. Si vous décidez de "
-"continuer, vous serez ajouté à la liste d'attente. <br> Dans ce cas, veuillez compléter le formulaire ci-dessous et "
-"nous le renvoyer."
+"continuer, vous serez ajouté à la liste d'attente. <br> Dans ce cas, "
+"veuillez compléter le formulaire ci-dessous et nous le renvoyer."
 
-#: inscription/templates/inscription.html:13
+#: inscription/templates/inscription.html:14
 msgid "Required"
 msgstr "Obligatoire"
 
-#: inscription/templates/inscription.html:32
+#: inscription/templates/inscription.html:33
 msgid "Full Address (Street, No., Apto., Postal Code, City)"
 msgstr "Adresse postal complète (rue, n°, boîte, code postal, ville)"
 
-#: inscription/templates/inscription.html:38
+#: inscription/templates/inscription.html:39
 msgid "Email Address"
 msgstr "Adresse email"
 
-#: inscription/templates/inscription.html:53
+#: inscription/templates/inscription.html:54
 msgid "Number of Places"
 msgstr "Nombre d'emplacements"
 
-#: inscription/templates/inscription.html:61
+#: inscription/templates/inscription.html:62
 msgid "1 slot = about 2,50m/4,50m"
 msgstr "1 emplacement = environ 2,50m/4,50m"
 
-#: inscription/templates/inscription.html:62
+#: inscription/templates/inscription.html:63
 msgid "1 slot = €8 payment on site"
 msgstr "1 emplacement = 8€ paiement sur place"
 
-#: inscription/templates/inscription.html:67
+#: inscription/templates/inscription.html:68
 msgid "Desired Location of the Place(s)"
 msgstr "Lieu souhaité pour le(s) emplacement(s)"
 
-#: inscription/templates/inscription.html:75
+#: inscription/templates/inscription.html:76
 msgid "Send"
 msgstr "Envoyer"
 
-#: inscription/templates/inscription.html:101
+#: inscription/templates/inscription.html:103
 msgid "This email already exists."
 msgstr "Cet email existe déjà."
 
-#: inscription/templates/inscription_submission.html:4
+#: inscription/templates/inscription_submission.html:5
 msgid "Enrollment Submitted"
 msgstr "Formulaire d'inscription envoyé!"
 
-#: inscription/templates/inscription_submission.html:6
+#: inscription/templates/inscription_submission.html:7
 msgid "We have received your registration form."
 msgstr "Nous avons bien reçu votre formulaire d’inscription."
 
-#: inscription/templates/inscription_submission.html:8
+#: inscription/templates/inscription_submission.html:9
 msgid "Kind Regards!"
 msgstr "Bien à vous,"
 
-#: inscription/templates/inscription_submission.html:10
+#: inscription/templates/inscription_submission.html:11
 msgid "Flea's team"
 msgstr "L'équipe organisatrice"
 
