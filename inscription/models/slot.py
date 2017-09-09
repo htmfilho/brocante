@@ -7,6 +7,7 @@ class SlotAdmin(admin.ModelAdmin):
     list_display = ('identification', 'location')
     list_filter = ('location',)
     fieldsets = ((None, {'fields': ('location', 'identification')}),)
+    ordering = ('identification',)
 
 
 class Slot(models.Model):
