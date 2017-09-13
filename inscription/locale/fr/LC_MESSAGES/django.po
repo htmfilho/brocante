@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-09 13:01+0000\n"
+"POT-Creation-Date: 2017-09-13 17:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgid "Confirmed"
 msgstr "Confirmée"
 
 #: inscription/models/inscription.py:18
-#: inscription/models/message_history.py:14
+#: inscription/models/message_history.py:15
 msgid "Waiting List"
 msgstr "Liste d'attente"
 
@@ -35,52 +35,52 @@ msgstr "Liste d'attente"
 msgid "Canceled"
 msgstr "Annulé"
 
-#: inscription/models/inscription.py:32
+#: inscription/models/inscription.py:33
 #: inscription/templates/inscription.html:27
 #: inscription/templates/inscriptions.html:16
 msgid "First Name"
 msgstr "Prénom"
 
-#: inscription/models/inscription.py:33
+#: inscription/models/inscription.py:34
 #: inscription/templates/inscription.html:21
 #: inscription/templates/inscriptions.html:15
 msgid "Last Name"
 msgstr "Nom"
 
-#: inscription/models/inscription.py:34
+#: inscription/models/inscription.py:35
 #: inscription/templates/inscriptions.html:17
 msgid "Address"
 msgstr "Adresse"
 
-#: inscription/models/inscription.py:35
+#: inscription/models/inscription.py:36
 msgid "Email"
 msgstr "Email"
 
-#: inscription/models/inscription.py:36
+#: inscription/models/inscription.py:37
 #: inscription/templates/inscription.html:46
 #: inscription/templates/inscriptions.html:18
 msgid "Phone"
 msgstr "Téléphone"
 
-#: inscription/models/inscription.py:37
+#: inscription/models/inscription.py:38
 #: inscription/templates/inscriptions.html:19
 msgid "Places"
 msgstr "Places"
 
-#: inscription/models/inscription.py:38
+#: inscription/models/inscription.py:39
 #: inscription/templates/inscriptions.html:20
 msgid "Desired Place"
 msgstr "Lieu souhaité"
 
-#: inscription/models/inscription.py:39
+#: inscription/models/inscription.py:40
 msgid "Status"
 msgstr "Statut"
 
-#: inscription/models/inscription.py:40
+#: inscription/models/inscription.py:41
 msgid "Registered"
 msgstr "Enregistrée"
 
-#: inscription/models/inscription.py:55
+#: inscription/models/inscription.py:56
 msgid "Enrollment submission in waiting list"
 msgstr "Inscription dans la liste d'attente"
 
@@ -100,32 +100,56 @@ msgstr "1 emplacement"
 msgid "2 slots"
 msgstr "2 emplacements"
 
-#: inscription/models/inscription_slot.py:12
+#: inscription/models/inscription_slot.py:21
 msgid "Inscription"
 msgstr "Inscription"
 
-#: inscription/models/inscription_slot.py:13
+#: inscription/models/inscription_slot.py:22
 msgid "Slot"
 msgstr "Emplacement"
+
+#: inscription/models/inscription_slot.py:35
+msgid "Brocante Bruyères 2017 - Useful Information"
+msgstr "Brocante Bruyères 2017 - Informations Utiles"
+
+#: inscription/models/inscription_slot.py:45
+msgid "The numbers of your slots are"
+msgstr "Vos emplacements portent les numéros"
+
+#: inscription/models/inscription_slot.py:46
+msgid "The location of your slots are"
+msgstr "Lieu de vos emplacements"
+
+#: inscription/models/inscription_slot.py:48
+msgid "The number of your slot is"
+msgstr "Votre emplacement porte le numéro"
+
+#: inscription/models/inscription_slot.py:49
+msgid "The location of your slot is"
+msgstr "Lieu de votre emplacement"
 
 #: inscription/models/location.py:12
 #, fuzzy
 msgid "Name"
 msgstr "Nom"
 
-#: inscription/models/message_history.py:12
+#: inscription/models/message_history.py:13
 msgid "Submission Confirmation"
 msgstr "Confirmation de réception"
 
-#: inscription/models/message_history.py:13
+#: inscription/models/message_history.py:14
 msgid "Inscription Confirmation"
 msgstr "Confirmation d'inscription"
 
-#: inscription/models/slot.py:12
+#: inscription/models/message_history.py:16
+msgid "Instructions"
+msgstr "Instructions"
+
+#: inscription/models/slot.py:14
 msgid "Location"
 msgstr "Lieu"
 
-#: inscription/models/slot.py:13
+#: inscription/models/slot.py:15
 msgid "Identification"
 msgstr "Identification"
 

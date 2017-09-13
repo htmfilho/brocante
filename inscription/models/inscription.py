@@ -26,6 +26,7 @@ class InscriptionAdmin(admin.ModelAdmin):
     fieldsets = ((None, {'fields': ('last_name', 'first_name', 'status', 'address', 'email', 'phone', 'number_places',
                                     'desired_place')}),)
     search_fields = ['first_name', 'last_name', 'address', 'email', 'phone']
+    ordering = ('last_name', 'first_name')
 
 
 class Inscription(models.Model):
@@ -45,7 +46,7 @@ class Inscription(models.Model):
         send_email_when_confirmed(self)
 
     def __str__(self):
-        return "{} {} - {}".format(self.first_name, self.last_name, self.number_places)
+        return "{}, {} - {}".format(self.last_name, self.first_name, self.number_places)
 
 
 def send_email_when_registering(inscription):
