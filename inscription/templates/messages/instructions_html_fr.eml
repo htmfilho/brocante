@@ -56,5 +56,6 @@ de manière à ce que votre emplacement puisse être attribué à une personne e
 Brocante Bruyères</p>
 
 
-<p style="color: red; font-size: 130%;">Respectons notre environnemment et munissons-nous d'un sac poubelle afin d'emporter tous nos déchets et invendus.</p>
+<p style="color: red; font-size: 130%;">Respectons notre environnemment et munissons-nous</p>
+<p style="color: red; font-size: 130%;">d'un sac poubelle afin d'emporter tous nos déchets et invendus.</p>
 {% endautoescape %}

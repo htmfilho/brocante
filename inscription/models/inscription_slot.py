@@ -42,11 +42,11 @@ def send_instructions_emails(inscription):
 
         if slots_quant > 1:
             slots_list = ", ".join([insc_slot.slot.identification for insc_slot in inscription_slots])
-            slots = "{}: {}".format(_('The numbers of your slots are'), slots_list)
-            location = "{}: {}".format(_('The location of your slots are'), inscription_slot.slot.location)
+            slots = "{}: <strong>{}</strong>".format(_('The numbers of your slots are'), slots_list)
+            location = "{}: <strong>{}</strong>".format(_('The location of your slots are'), inscription_slot.slot.location)
         else:
-            slots = "{}: {}".format(_('The number of your slot is'), inscription_slot.slot.identification)
-            location = "{}: {}".format(_('The location of your slot is'), inscription_slot.slot.location)
+            slots = "{}: <strong>{}<strong>".format(_('The number of your slot is'), inscription_slot.slot.identification)
+            location = "{}: <strong>{}<strong>".format(_('The location of your slot is'), inscription_slot.slot.location)
 
         context = {'slots': slots,
                    'location': location}
