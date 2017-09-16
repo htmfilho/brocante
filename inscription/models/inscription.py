@@ -26,7 +26,6 @@ class InscriptionAdmin(admin.ModelAdmin):
     fieldsets = ((None, {'fields': ('last_name', 'first_name', 'status', 'address', 'email', 'phone', 'number_places',
                                     'desired_place')}),)
     search_fields = ['first_name', 'last_name', 'address', 'email', 'phone']
-    #ordering = ('last_name', 'first_name')
 
 
 class Inscription(models.Model):

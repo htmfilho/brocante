@@ -10,6 +10,7 @@ from inscription.utils import post_officer
 class InscriptionSlotAdmin(admin.ModelAdmin):
     list_display = ('inscription', 'slot')
     fieldsets = ((None, {'fields': ('inscription', 'slot')}),)
+    raw_id_fields = ('inscription',)
     actions = ['send_instructions']
 
     def send_instructions(self, request, queryset):
@@ -23,6 +24,9 @@ class InscriptionSlot(models.Model):
 
     class Meta:
         unique_together = ('inscription', 'slot')
+
+    def __str__(self):
+        return "{} - {}".format(self.inscription, self.slot)
 
 
 def find_by_inscription(inscription):
