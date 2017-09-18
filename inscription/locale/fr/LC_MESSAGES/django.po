@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-13 17:43+0000\n"
+"POT-Creation-Date: 2017-09-18 18:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,96 +35,96 @@ msgstr "Liste d'attente"
 msgid "Canceled"
 msgstr "Annulé"
 
-#: inscription/models/inscription.py:33
+#: inscription/models/inscription.py:32
 #: inscription/templates/inscription.html:27
-#: inscription/templates/inscriptions.html:16
+#: inscription/templates/inscriptions.html:17
 msgid "First Name"
 msgstr "Prénom"
 
-#: inscription/models/inscription.py:34
+#: inscription/models/inscription.py:33
 #: inscription/templates/inscription.html:21
-#: inscription/templates/inscriptions.html:15
+#: inscription/templates/inscriptions.html:16
 msgid "Last Name"
 msgstr "Nom"
 
-#: inscription/models/inscription.py:35
-#: inscription/templates/inscriptions.html:17
+#: inscription/models/inscription.py:34
+#: inscription/templates/inscriptions.html:18
 msgid "Address"
 msgstr "Adresse"
 
-#: inscription/models/inscription.py:36
+#: inscription/models/inscription.py:35
 msgid "Email"
 msgstr "Email"
 
-#: inscription/models/inscription.py:37
+#: inscription/models/inscription.py:36
 #: inscription/templates/inscription.html:46
-#: inscription/templates/inscriptions.html:18
+#: inscription/templates/inscriptions.html:19
 msgid "Phone"
 msgstr "Téléphone"
 
-#: inscription/models/inscription.py:38
-#: inscription/templates/inscriptions.html:19
+#: inscription/models/inscription.py:37
+#: inscription/templates/inscriptions.html:20
 msgid "Places"
 msgstr "Places"
 
-#: inscription/models/inscription.py:39
-#: inscription/templates/inscriptions.html:20
+#: inscription/models/inscription.py:38
+#: inscription/templates/inscriptions.html:21
 msgid "Desired Place"
 msgstr "Lieu souhaité"
 
-#: inscription/models/inscription.py:40
+#: inscription/models/inscription.py:39
 msgid "Status"
 msgstr "Statut"
 
-#: inscription/models/inscription.py:41
+#: inscription/models/inscription.py:40
 msgid "Registered"
 msgstr "Enregistrée"
 
-#: inscription/models/inscription.py:56
+#: inscription/models/inscription.py:55
 msgid "Enrollment submission in waiting list"
 msgstr "Inscription dans la liste d'attente"
 
-#: inscription/models/inscription.py:61
+#: inscription/models/inscription.py:60
 msgid "Enrollment Submission Confirmed"
 msgstr "Inscription reçue"
 
-#: inscription/models/inscription.py:72
+#: inscription/models/inscription.py:71
 msgid "Enrollment Confirmed"
 msgstr "Inscription confirmée"
 
-#: inscription/models/inscription.py:75
+#: inscription/models/inscription.py:74
 msgid "1 slot"
 msgstr "1 emplacement"
 
-#: inscription/models/inscription.py:75
+#: inscription/models/inscription.py:74
 msgid "2 slots"
 msgstr "2 emplacements"
 
-#: inscription/models/inscription_slot.py:21
+#: inscription/models/inscription_slot.py:22
 msgid "Inscription"
 msgstr "Inscription"
 
-#: inscription/models/inscription_slot.py:22
+#: inscription/models/inscription_slot.py:23
 msgid "Slot"
 msgstr "Emplacement"
 
-#: inscription/models/inscription_slot.py:35
+#: inscription/models/inscription_slot.py:36
 msgid "Brocante Bruyères 2017 - Useful Information"
 msgstr "Brocante Bruyères 2017 - Informations Utiles"
 
-#: inscription/models/inscription_slot.py:45
+#: inscription/models/inscription_slot.py:46
 msgid "The numbers of your slots are"
 msgstr "Vos emplacements portent les numéros"
 
-#: inscription/models/inscription_slot.py:46
+#: inscription/models/inscription_slot.py:47
 msgid "The location of your slots are"
 msgstr "Lieu de vos emplacements"
 
-#: inscription/models/inscription_slot.py:48
+#: inscription/models/inscription_slot.py:49
 msgid "The number of your slot is"
 msgstr "Votre emplacement porte le numéro"
 
-#: inscription/models/inscription_slot.py:49
+#: inscription/models/inscription_slot.py:50
 msgid "The location of your slot is"
 msgstr "Lieu de votre emplacement"
 
@@ -237,6 +237,10 @@ msgstr "Total d'emplacements réservés"
 #: inscription/templates/inscriptions.html:9
 msgid "Total of Confirmed Places"
 msgstr "Total d'emplacements confirmés"
+
+#: inscription/templates/inscriptions.html:15
+msgid "Slots"
+msgstr "Emplacements"
 
 #: inscription/templates/layout.html:10 inscription/templates/layout.html:20
 msgid "Flea Market"
