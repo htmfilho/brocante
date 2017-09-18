@@ -9,9 +9,11 @@ from inscription.utils import post_officer
 
 class InscriptionSlotAdmin(admin.ModelAdmin):
     list_display = ('slot', 'inscription')
+    list_filter = ('slot__location',)
     fieldsets = ((None, {'fields': ('inscription', 'slot')}),)
     raw_id_fields = ('inscription',)
     actions = ['send_instructions']
+    search_fields = ['slot__identification', 'inscription__first_name', 'inscription__last_name']
 
     def send_instructions(self, request, queryset):
         for record in queryset:
