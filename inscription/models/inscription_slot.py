@@ -45,13 +45,19 @@ def send_instructions_emails(inscription):
 
         if slots_quant > 1:
             slots_list = _get_list_slots(inscription_slots)
-            slots = "{}: {}".format(_('The numbers of your slots are'), slots_list)
-            location = "{}: {}".format(_('The location of your slots are'), inscription_slot.slot.location)
+            slots_label = _('The numbers of your slots are')
+            slots = slots_list
+            location_label = _('The location of your slots are')
+            location = inscription_slot.slot.location
         else:
-            slots = "{}: {}".format(_('The number of your slot is'), inscription_slot.slot.identification)
-            location = "{}: {}".format(_('The location of your slot is'), inscription_slot.slot.location)
+            slots_label = _('The number of your slot is')
+            slots = inscription_slot.slot.identification
+            location_label = _('The location of your slot is')
+            location = inscription_slot.slot.location
 
-        context = {'slots': slots,
+        context = {'slots_label': slots_label,
+                   'slots': slots,
+                   'location_label': location_label,
                    'location': location}
         recipients = [inscription.email]
         post_officer.send_message(recipients, subject, template.render(context), message_history.INSTRUCTIONS,

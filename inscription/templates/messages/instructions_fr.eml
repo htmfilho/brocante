@@ -6,8 +6,8 @@ ci-après quelques informations utiles pour la réussite de cette journée.
 
 NUMÉROTATION DES EMPLACEMENTS
 
-{{ slots }}
-{{ location }}
+{{ slots_label }}: {{ slots }}
+{{ location_label }}: {{ location }}
 
 CIRCULATION DES VÉHICULES DES EXPOSANTS
 
