@@ -18,6 +18,7 @@ TYPE_CHOICES = (
 
 class MessageHistoryAdmin(admin.ModelAdmin):
     list_display = ('recipients', 'subject', 'sent_date', 'type')
+    list_filter = ('type',)
     fieldsets = ((None, {'fields': ('recipients', 'subject', 'message', 'type')}),)
     search_fields = ['subject', 'content', 'inscription']
 
