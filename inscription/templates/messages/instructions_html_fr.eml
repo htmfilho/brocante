@@ -6,8 +6,8 @@ ci-après quelques informations utiles pour la réussite de cette journée.</p>
 
 <h2>Numérotation des emplacements</h2>
 
-<p>{{ slots }}</p>
-<p>{{ location }}</p>
+<p><strong>{{ slots }}</strong></p>
+<p><strong>{{ location }}</strong></p>
 
 <h2> Circulation des véhicules des exposants</h2>
 
