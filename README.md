@@ -1,6 +1,7 @@
-# Heroku Django Starter Template
+# Brocante
 
-An utterly fantastic project starter template for Django 1.11.
+A web application to manage Flea Markets in small communities. It is intended to gather people from a community in a
+physical space to sell their unused items to other people that might find those items useful.
 
 ## Features
 
@@ -10,11 +11,31 @@ An utterly fantastic project starter template for Django 1.11.
 
 ## How to Use
 
+This project uses the stack Python 3.5 / Django 1.11 / PostgreSQL 9.6.
+
 To use this project, follow these steps:
 
-1. Create your working environment.
-2. Install Django (`$ pip install django`)
-3. Create a new project using this template
+### Create your working environment
+
+    $ createdb brocante
+    $ createdb brocante_usr -P
+    $ psql -d brocante
+      # grant connect on database brocante to brocante_usr;
+      # revoke connect on database brocante from public;
+      # alter user brocante_usr createdb;
+      # \q
+
+    $ mkdir -R ~/python/projects
+    $ cd ~/python/projects
+    $ git clone https://github.com/htmfilho/brocante.git
+    $ cd brocante
+    $ virtualenv --python=python3.5 venv
+    $ source venv/bin/activate
+
+    [venv] $ pip install -r requirements.txt
+    [venv] $ ./manage.py migrate
+    [venv] $ ./manage.py createsuperuser
+    [venv] $ ./manage.py runserver
 
 ## Creating Your Project
 
@@ -48,10 +69,6 @@ You can replace ``helloworld`` with your desired project name.
 
 
 See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
-
-## Using Python 2.7?
-
-Just update `runtime.txt` to `python-2.7.13` (no trailing spaces or newlines!).
 
 
 ## License: MIT
