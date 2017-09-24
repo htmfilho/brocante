@@ -3,7 +3,7 @@ from django.db import models
 from django.template import loader
 from django.utils.translation import ugettext_lazy as _
 from inscription.models.inscription import CONFIRMED
-from inscription.models import message_history
+from inscription.models import message_history, slot
 from inscription.utils import post_officer
 
 
@@ -33,7 +33,7 @@ def find_by_inscription(inscription):
 
 
 def send_instructions_emails(inscription):
-    messages = message_history.find_messages(inscription.email, message_history.INSTRUCTIONS).count()
+    messages = message_history.find_messages(inscription.email, type=message_history.INSTRUCTIONS).count()
     if inscription.email and inscription.status == CONFIRMED and messages == 0:
         subject = _('Brocante Bruyères 2017 - Useful Information')
         template = loader.get_template('messages/instructions_fr.eml')
@@ -71,3 +71,7 @@ def _get_list_slots(inscription_slots):
 def get_list_slots(inscription):
     inscription_slots = find_by_inscription(inscription)
     return _get_list_slots(inscription_slots)
+
+
+def find_available_slots():
+    return slot.Slot.objects.exclude(id__in=InscriptionSlot.objects.values("slot"))

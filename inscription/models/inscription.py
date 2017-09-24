@@ -66,7 +66,7 @@ def send_email_when_registering(inscription):
 
 
 def send_email_when_confirmed(inscription):
-    messages = message_history.find_messages(inscription.email, message_history.INSCRIPTION_CONFIRMATION).count()
+    messages = message_history.find_messages(inscription.email, type=message_history.INSCRIPTION_CONFIRMATION).count()
     if inscription.email and inscription.status == CONFIRMED and messages == 0:
         subject = _('Enrollment Confirmed')
         template = loader.get_template('messages/confirmation_fr.eml')
@@ -95,6 +95,11 @@ def get_total_demanded_places():
         return sum_number_places['number_places__sum']
     else:
         return 0
+
+
+def get_notification_types(inscription):
+    messages = message_history.find_messages(inscription.email)
+    return [msg.type for msg in messages]
 
 
 def is_total_places_reached(current_demand=0):

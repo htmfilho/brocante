@@ -31,5 +31,8 @@ class MessageHistory(models.Model):
     type = models.CharField(max_length=30, choices=TYPE_CHOICES, default=INSCRIPTION_CONFIRMATION)
 
 
-def find_messages(recipient, a_type):
-    return MessageHistory.objects.filter(recipients=recipient).filter(type=a_type)
+def find_messages(recipient, type=None):
+    messages = MessageHistory.objects.filter(recipients=recipient)
+    if type:
+        messages = messages.filter(type=type)
+    return messages.order_by("sent_date")

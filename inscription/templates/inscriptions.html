@@ -1,37 +1,59 @@
 {% extends 'layout.html' %}
 {% load i18n %}
 {% block content %}
-<h2>{% trans "Inscriptions" %}</h2>
+{% if available_slots %}
+    <h2>{% trans "Available Slots" %}</h2>
 
-<div class="row">
-    <div class="col-md-4"><b>{% trans "Total Inscriptions" %}:</b> {{ inscriptions | length }}</div>
-    <div class="col-md-4"><b>{% trans "Total of Demanded Places" %}:</b> {{ total_demanded_places }}</div>
-    <div class="col-md-4"><b>{% trans "Total of Confirmed Places" %}:</b> {{ total_confirmed_places }}</div>
-</div>
-<br>
-<table class="table">
-    <tr>
-        <th></th>
-        <th>{% trans "Slots" %}</th>
-        <th>{% trans "Last Name" %}</th>
-        <th>{% trans "First Name" %}</th>
-        <th>{% trans "Address" %}</th>
-        <th>{% trans "Phone" %}</th>
-        <th>{% trans "Places" %}</th>
-        <th>{% trans "Desired Place" %}</th>
-    </tr>
-    {% for inscription in inscriptions %}
+    <table class="table">
         <tr>
-            <td>_______</td>
-            <td>{{ inscription.slots }}</td>
-            <td>{{ inscription.last_name }}</td>
-            <td>{{ inscription.first_name }}</td>
-            <td>{{ inscription.address }}</td>
-            <td>{{ inscription.phone }}</td>
-            <td>{{ inscription.number_places }}</td>
-            <td>{{ inscription.desired_place }}</td>
+            <th>{% trans "Identification" %}</th>
+            <th>{% trans "Location" %}</th>
         </tr>
-    {% endfor %}
-</table>
+        {% for slot in available_slots %}
+            <tr>
+                <td>{{ slot.identification }}</td>
+                <td>{{ slot.location }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
 
+{% if inscriptions %}
+    <h2>{% trans "Inscriptions" %}</h2>
+
+    <div class="row">
+        <div class="col-md-3"><label>{% trans "Total Inscriptions" %}:</label> {{ inscriptions | length }}</div>
+        <div class="col-md-3"><label>{% trans "Total of Demanded Places" %}:</label> {{ total_demanded_places }}</div>
+        <div class="col-md-3"><label>{% trans "Total of Confirmed Places" %}:</label> {{ total_confirmed_places }}</div>
+    </div>
+    <br>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>{% trans "Slots" %}</th>
+            <th>{% trans "Last Name" %}</th>
+            <th>{% trans "First Name" %}</th>
+            <th>{% trans "Address" %}</th>
+            <th>{% trans "Phone" %}</th>
+            <th>{% trans "Places" %}</th>
+            <th>{% trans "Notifications" %}</th>
+            <th>{% trans "Desired Place" %}</th>
+        </tr>
+        {% for inscription in inscriptions %}
+            <tr>
+                <td>_______</td>
+                <td>{{ inscription.slots }}</td>
+                <td>{{ inscription.last_name }}</td>
+                <td>{{ inscription.first_name }}</td>
+                <td>{{ inscription.address }}</td>
+                <td>{{ inscription.phone }}</td>
+                <td>{{ inscription.number_places }}</td>
+                <td>{% for key, val in inscription.notifications.items %}
+                        <span class="glyphicon glyphicon-{{ key }}" aria-hidden="true"  data-toggle="tooltip" data-placement="top" title="{{ val }}"></span>
+                    {% endfor %}</td>
+                <td>{{ inscription.desired_place }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
 {% endblock%}
