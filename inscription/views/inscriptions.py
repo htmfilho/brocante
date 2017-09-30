@@ -21,6 +21,13 @@ def inscriptions_view(request):
     return render(request, "inscriptions.html", locals())
 
 
+@user_passes_test(lambda u: u.is_staff)
+def inscriptions_summary(request):
+    total_confirmed_places = inscription.get_total_confirmed_places()
+    inscriptions = inscription.find_confirmed_inscriptions()
+    return render(request, "inscriptions_summary.html", locals())
+
+
 def _get_notification_icons(a_inscription):
     notification_types = inscription.get_notification_types(a_inscription)
     icons = {}
