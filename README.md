@@ -37,44 +37,4 @@ To use this project, follow these steps:
     [venv] $ ./manage.py createsuperuser
     [venv] $ ./manage.py runserver
 
-## Creating Your Project
-
-Using this template to create a new Django app is easy::
-
-    $ django-admin.py startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile helloworld
-
-(If this doesn't work on windows, replace `django-admin.py` with `django-admin`)
-
-You can replace ``helloworld`` with your desired project name.
-
-## Deployment to Heroku
-
-    $ git init
-    $ git add -A
-    $ git commit -m "Initial commit"
-
-    $ heroku create
-    $ git push heroku master
-
-    $ heroku run python manage.py migrate
-
-### Translation Files
-
-    $ brew install gettext
-    $ brew upgrade gettext
-    $ echo 'export PATH="/usr/local/opt/gettext/bin:$PATH"' >> ~/.bash_profile
-    $ python manage.py makemessages
-    $ python manage.py compilemessages
-    $ heroku run python manage.py compilemessages
-
-
-See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
-
-
-## License: MIT
-
-## Further Reading
-
-- [Gunicorn](https://warehouse.python.org/project/gunicorn/)
-- [WhiteNoise](https://warehouse.python.org/project/whitenoise/)
-- [dj-database-url](https://warehouse.python.org/project/dj-database-url/)
+### License: MIT
