@@ -5,9 +5,13 @@ physical space to sell their unused items to other people that might find those 
 
 ## Features
 
-- Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
-- Enhancements to Django's static file serving functionality via WhiteNoise.
-- Latest Python 3.6 runtime environment.
+- Registration form to allow people to request one or more slots in the flea market.
+- Email automatically sent to the user when the registration is finished.
+- Confirmation of request of reservation by email.
+- Assignment of a reservation to a slot and details of the assignment sent by email.
+- Management of slots available.
+- Statistics of the ocupation.
+- Management of a waiting list.
 
 ## How to Use
 
