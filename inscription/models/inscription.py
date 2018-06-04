@@ -20,11 +20,11 @@ STATUS_CHOICES = (
 
 
 class InscriptionAdmin(admin.ModelAdmin):
-    list_display = ('last_name', 'first_name', 'status', 'address', 'email', 'phone', 'number_places', 'desired_place',
+    list_display = ('last_name', 'first_name', 'status', 'email', 'phone', 'number_places', 'accepted_newsletter',
                     'registered')
     list_filter = ('status',)
     fieldsets = ((None, {'fields': ('last_name', 'first_name', 'status', 'address', 'email', 'phone', 'number_places',
-                                    'desired_place')}),)
+                                    'desired_place', 'accepted_newsletter')}),)
     search_fields = ['first_name', 'last_name', 'address', 'email', 'phone']
 
 
@@ -38,18 +38,20 @@ class Inscription(models.Model):
     desired_place = models.TextField(verbose_name=_("Desired Place"), blank=True, null=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=NOT_CONFIRMED, verbose_name=_("Status"))
     registered = models.DateTimeField(null=True, auto_now=True, verbose_name=_("Registered"))
+    accepted_terms = models.BooleanField(default=False)
+    accepted_newsletter = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
-        send_email_when_registering(self)
+        #send_email_when_registering(self)
         super(Inscription, self).save(*args, **kwargs)
-        send_email_when_confirmed(self)
+        #send_email_when_confirmed(self)
 
     def __str__(self):
         return "{}, {} - {}".format(self.last_name, self.first_name, self.number_places)
 
 
 def send_email_when_registering(inscription):
-    if not inscription.pk:
+    if is_new_inscription(inscription):
         if is_total_places_reached(getattr(inscription, 'number_places')):
             inscription.status = WAITING_LIST
             subject = _('Enrollment submission in waiting list')
@@ -63,6 +65,10 @@ def send_email_when_registering(inscription):
             recipients = [inscription.email]
             post_officer.send_message(recipients, subject, template.render(context),
                                       message_history.SUBMISSION_CONFIRMATION)
+
+
+def is_new_inscription(inscription):
+    return not inscription.pk
 
 
 def send_email_when_confirmed(inscription):

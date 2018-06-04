@@ -11,10 +11,27 @@
   {% endif %}
 
   <form id="inscription_form" action="{% url 'inscription' %}" method="post">
-    <p class="required">* {% trans "Required" %}</p>
-    <div class="panel panel-default">
+    {% csrf_token %}
+    
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <h3 class="panel-title">{% trans "please read carefully and accept before continue" %}</h3>
+      </div>
       <div class="panel-body">
-        {% csrf_token %}
+        <p>{% trans "The use of personal data" %}</p>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="accepted_terms" id="accepted_terms" required> <b>{% trans "I agree with the use of my personal data" %}.</b>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <p class="required">* {% trans "Required Fields" %}</p>
+
+    <div class="panel panel-default">
+      <div class="panel-body"> 
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -49,7 +66,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="form-group">
               <label for="number_places">{% trans "Number of Places" %} <span class="required">*</span></label><br>
               <label class="radio-inline">
@@ -63,12 +80,18 @@
               {% trans "1 slot = €8 payment on site" %}</p>
             </div>
           </div>
-          <div class="col-md-9">
+          <div class="col-md-8">
             <div class="form-group">
               <label for="id_desired_place">{% trans "Desired Location of the Place(s)" %}</label>
               <textarea name="desired_place" rows="3" cols="60" class="form-control" id="desired_place"></textarea>
             </div>
           </div>
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="accepted_newsletter" id="accepted_newsletter"> <b>{% trans "I would like to receive the newsletter after the event" %}.</b>
+          </label>
         </div>
       </div>
       <div class="panel-footer">
