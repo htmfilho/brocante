@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import dotenv
 import dj_database_url
 from django.utils.translation import ugettext_lazy as _
 
@@ -22,7 +23,12 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "vmjpvky06^zavuw+xe))moo0u8m-d@hej8nanrez!uc$cv0c%7"
+try:
+    SECRET_KEY = os.environ['SECRET_KEY']
+except KeyError:
+    path_env = os.path.join(BASE_DIR, '.env')
+    dotenv.read_dotenv(path_env)
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -135,7 +141,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = ''
-EMAIL_PORT = 587
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'localhost')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 25))
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'user@localhost')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'secret')
