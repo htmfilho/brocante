@@ -166,9 +166,9 @@ msgid ""
 "All slots are reserved for the moment. If you decide to continue you will be "
 "added to the waiting list."
 msgstr ""
-"Tous les emplacements sont réservés pour le moment. Si vous décidez de "
-"continuer, vous serez ajouté à la liste d'attente. <br> Dans ce cas, "
-"veuillez compléter le formulaire ci-dessous et nous le renvoyer."
+"Tous les emplacements sont réservés pour le moment. Si vous souhaitez être "
+"inscrit.e dans la liste d'attente, veuillez compléter le formulaire "
+"ci-dessous et nous le renvoyer."
 
 #: inscription/templates/inscription.html:18
 msgid "please read carefully and accept before continue"
@@ -177,7 +177,7 @@ msgstr "Merci de lire attentivement et accepter avant de continuer"
 #: inscription/templates/inscription.html:21
 msgid "The use of personal data"
 msgstr ""
-"<p>La Brocante Bruyères a besoin de votre données personnel pour être "
+"<p>Les organisateurs a Brocante Bruyères a besoin de votre données personnel pour être "
 "capable de bien organiser l'evénement. Votre nom et prénom sont necessaire "
 "pour vous identifier correctement à chaque communication. Votre adresse mail "
 "et téléphone sont necessaire pour notre communication directe. L'adresse est "
@@ -187,8 +187,7 @@ msgstr ""
 "pour envoyer une newsletter. Le nom, prénom et email seront suprimmer 2 mois "
 "après la brocante. Aucune données n'est réutilisée d'une année à l'autre.</"
 "p><p>Votre nom, prénom et adresse sont partagés uniquement avec la police "
-"qui a besoin de cette information pour donner l'autorisation et assurrer la "
-"securité de l'evénement.</p>"
+"qui a besoin de cette information pour assurrer la securité de l'evénement.</p>"
 
 #: inscription/templates/inscription.html:25
 msgid "I agree with the use of my personal data"
@@ -196,11 +195,11 @@ msgstr "Je suis d'accord avec l'utilisation de mes données personnelles"
 
 #: inscription/templates/inscription.html:31
 msgid "Required Fields"
-msgstr "Les champs obligatoires"
+msgstr "Champs obligatoires"
 
 #: inscription/templates/inscription.html:50
 msgid "Full Address (Street, No., Apto., Postal Code, City)"
-msgstr "Adresse postal complète (rue, n°, boîte, code postal, ville)"
+msgstr "Adresse postale complète (rue, n°, boîte, code postal, ville)"
 
 #: inscription/templates/inscription.html:56
 msgid "Email Address"
@@ -212,11 +211,11 @@ msgstr "Nombre d'emplacements"
 
 #: inscription/templates/inscription.html:79
 msgid "1 slot = about 2,50m/4,50m"
-msgstr "1 emplacement = environ 2,50m/4,50m"
+msgstr "1 emplacement = environ 2,50m sur 4,50m"
 
 #: inscription/templates/inscription.html:80
 msgid "1 slot = €8 payment on site"
-msgstr "1 emplacement = 8€ paiement sur place"
+msgstr "1 emplacement = 8€ (paiement sur place)"
 
 #: inscription/templates/inscription.html:85
 msgid "Desired Location of the Place(s)"

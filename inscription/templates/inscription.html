@@ -12,7 +12,9 @@
 
   <form id="inscription_form" action="{% url 'inscription' %}" method="post">
     {% csrf_token %}
-    
+
+    <p class="required">* {% trans "Required Fields" %}</p>
+
     <div class="panel panel-warning">
       <div class="panel-heading">
         <h3 class="panel-title">{% trans "please read carefully and accept before continue" %}</h3>
@@ -22,13 +24,11 @@
 
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="accepted_terms" id="accepted_terms" required> <b>{% trans "I agree with the use of my personal data" %}.</b>
+            <input type="checkbox" name="accepted_terms" id="accepted_terms" required> <b>{% trans "I agree with the use of my personal data" %}. <span class="required">*</span></b>
           </label>
         </div>
       </div>
     </div>
-
-    <p class="required">* {% trans "Required Fields" %}</p>
 
     <div class="panel panel-default">
       <div class="panel-body"> 

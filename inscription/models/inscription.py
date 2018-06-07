@@ -50,7 +50,7 @@ class Inscription(models.Model):
 
 
 def send_email_when_registering(inscription):
-    if is_new_inscription(inscription):
+    if is_new_inscription(inscription) and inscription.email:
         if is_total_places_reached(getattr(inscription, 'number_places')):
             inscription.status = WAITING_LIST
             msg_template = message_template.get_by_reference("WAITING_LIST")
