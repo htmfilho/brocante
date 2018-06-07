@@ -1,8 +1,7 @@
 from django.contrib import admin
 from django.db import models
-from django.template import loader
 from django.utils.translation import ugettext_lazy as _
-from inscription.models import message_history
+from inscription.models import message_history, message_template
 from inscription.utils import post_officer
 
 NOT_CONFIRMED = 'NOT_CONFIRMED'
@@ -39,12 +38,12 @@ class Inscription(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=NOT_CONFIRMED, verbose_name=_("Status"))
     registered = models.DateTimeField(null=True, auto_now=True, verbose_name=_("Registered"))
     accepted_terms = models.BooleanField(default=False)
-    accepted_newsletter = models.BooleanField(default=False)
+    accepted_newsletter = models.BooleanField(default=False, verbose_name=_("Newsletter"))
 
     def save(self, *args, **kwargs):
-        #send_email_when_registering(self)
+        send_email_when_registering(self)
         super(Inscription, self).save(*args, **kwargs)
-        #send_email_when_confirmed(self)
+        send_email_when_confirmed(self)
 
     def __str__(self):
         return "{}, {} - {}".format(self.last_name, self.first_name, self.number_places)
@@ -54,32 +53,32 @@ def send_email_when_registering(inscription):
     if is_new_inscription(inscription):
         if is_total_places_reached(getattr(inscription, 'number_places')):
             inscription.status = WAITING_LIST
-            subject = _('Enrollment submission in waiting list')
-            template = loader.get_template('messages/waiting_list_fr.eml')
+            msg_template = message_template.get_by_reference("WAITING_LIST")
+            subject = post_officer.get_subject_from_template(msg_template)
+            message = post_officer.get_message_from_template(msg_template)
             recipients = [inscription.email]
-            post_officer.send_message(recipients, subject, template.render(), message_history.WAITING_LIST)
+            post_officer.send_message(recipients, subject, message, message_history.WAITING_LIST)
         else:
-            subject = _('Enrollment Submission Confirmed')
-            template = loader.get_template('messages/submission_confirmation_fr.eml')
+            msg_template = message_template.get_by_reference("SUBMISSION_CONFIRMATION")
+            subject = post_officer.get_subject_from_template(msg_template)
             context = {'user': "{} {}".format(inscription.first_name, inscription.last_name)}
+            message = post_officer.get_message_from_template(msg_template, context)
             recipients = [inscription.email]
-            post_officer.send_message(recipients, subject, template.render(context),
-                                      message_history.SUBMISSION_CONFIRMATION)
-
-
-def is_new_inscription(inscription):
-    return not inscription.pk
+            post_officer.send_message(recipients, subject, message, message_history.SUBMISSION_CONFIRMATION)
 
 
 def send_email_when_confirmed(inscription):
     messages = message_history.find_messages(inscription.email, type=message_history.INSCRIPTION_CONFIRMATION).count()
     if inscription.email and inscription.status == CONFIRMED and messages == 0:
-        subject = _('Enrollment Confirmed')
-        template = loader.get_template('messages/confirmation_fr.eml')
+        # subject = _('Enrollment Confirmed')
+        # template = loader.get_template('messages/confirmation_fr.eml')
+        msg_template = message_template.get_by_reference("INSCRIPTION_CONFIRMATION")
+        subject = post_officer.get_subject_from_template(msg_template)
         context = {'user': "{} {}".format(inscription.first_name, inscription.last_name),
                    'places': _("1 slot") if inscription.number_places == 1 else _("2 slots")}
+        message = post_officer.get_message_from_template(msg_template, context)
         recipients = [inscription.email]
-        post_officer.send_message(recipients, subject, template.render(context), message_history.INSCRIPTION_CONFIRMATION)
+        post_officer.send_message(recipients, subject, message, message_history.INSCRIPTION_CONFIRMATION)
 
 
 def find_confirmed_inscriptions():
@@ -106,6 +105,10 @@ def get_total_demanded_places():
 def get_notification_types(inscription):
     messages = message_history.find_messages(inscription.email)
     return [msg.type for msg in messages]
+
+
+def is_new_inscription(inscription):
+    return not inscription.pk
 
 
 def is_total_places_reached(current_demand=0):

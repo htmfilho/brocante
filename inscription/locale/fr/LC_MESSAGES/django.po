@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-04 09:08+0000\n"
+"POT-Creation-Date: 2018-06-07 14:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,90 +18,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: inscription/models/inscription.py:16
+#: inscription/models/inscription.py:15
 msgid "Not Confirmed"
 msgstr "Non confirmée"
 
-#: inscription/models/inscription.py:17
+#: inscription/models/inscription.py:16
 msgid "Confirmed"
 msgstr "Confirmée"
 
-#: inscription/models/inscription.py:18
+#: inscription/models/inscription.py:17
 #: inscription/models/message_history.py:15
 #: inscription/views/inscriptions.py:42
 msgid "Waiting List"
 msgstr "Liste d'attente"
 
-#: inscription/models/inscription.py:19
+#: inscription/models/inscription.py:18
 msgid "Canceled"
 msgstr "Annulé"
 
-#: inscription/models/inscription.py:32
-#: inscription/templates/inscription.html:43
+#: inscription/models/inscription.py:31
+#: inscription/templates/inscription.html:44
 #: inscription/templates/inscriptions.html:35
 #: inscription/templates/inscriptions_summary.html:13
 msgid "First Name"
 msgstr "Prénom"
 
-#: inscription/models/inscription.py:33
-#: inscription/templates/inscription.html:37
+#: inscription/models/inscription.py:32
+#: inscription/templates/inscription.html:38
 #: inscription/templates/inscriptions.html:34
 #: inscription/templates/inscriptions_summary.html:12
 msgid "Last Name"
 msgstr "Nom"
 
-#: inscription/models/inscription.py:34
+#: inscription/models/inscription.py:33
 #: inscription/templates/inscriptions.html:36
 #: inscription/templates/inscriptions_summary.html:14
 msgid "Address"
 msgstr "Adresse"
 
-#: inscription/models/inscription.py:35
+#: inscription/models/inscription.py:34
 msgid "Email"
 msgstr "Email"
 
-#: inscription/models/inscription.py:36
-#: inscription/templates/inscription.html:62
+#: inscription/models/inscription.py:35
+#: inscription/templates/inscription.html:63
 #: inscription/templates/inscriptions.html:37
 #: inscription/templates/inscriptions_summary.html:15
 msgid "Phone"
 msgstr "Téléphone"
 
-#: inscription/models/inscription.py:37
+#: inscription/models/inscription.py:36
 #: inscription/templates/inscriptions.html:38
 msgid "Places"
 msgstr "Places"
 
-#: inscription/models/inscription.py:38
+#: inscription/models/inscription.py:37
 #: inscription/templates/inscriptions.html:40
 msgid "Desired Place"
 msgstr "Lieu souhaité"
 
-#: inscription/models/inscription.py:39
+#: inscription/models/inscription.py:38
 msgid "Status"
 msgstr "Statut"
 
-#: inscription/models/inscription.py:40
+#: inscription/models/inscription.py:39
 msgid "Registered"
 msgstr "Enregistrée"
 
-#: inscription/models/inscription.py:57
-msgid "Enrollment submission in waiting list"
-msgstr "Inscription dans la liste d'attente"
+#: inscription/models/inscription.py:41
+msgid "Newsletter"
+msgstr "Newsletter"
 
-#: inscription/models/inscription.py:62
-msgid "Enrollment Submission Confirmed"
-msgstr "Inscription reçue"
-
-#: inscription/models/inscription.py:77
-msgid "Enrollment Confirmed"
-msgstr "Inscription confirmée"
-
-#: inscription/models/inscription.py:80
+#: inscription/models/inscription.py:78
 msgid "1 slot"
 msgstr "1 emplacement"
 
-#: inscription/models/inscription.py:80
+#: inscription/models/inscription.py:78
 msgid "2 slots"
 msgstr "2 emplacements"
 
@@ -178,11 +170,11 @@ msgstr ""
 "continuer, vous serez ajouté à la liste d'attente. <br> Dans ce cas, "
 "veuillez compléter le formulaire ci-dessous et nous le renvoyer."
 
-#: inscription/templates/inscription.html:16
+#: inscription/templates/inscription.html:18
 msgid "please read carefully and accept before continue"
 msgstr "Merci de lire attentivement et accepter avant de continuer"
 
-#: inscription/templates/inscription.html:19
+#: inscription/templates/inscription.html:21
 msgid "The use of personal data"
 msgstr ""
 "<p>La Brocante Bruyères a besoin de votre données personnel pour être "
@@ -198,47 +190,48 @@ msgstr ""
 "qui a besoin de cette information pour donner l'autorisation et assurrer la "
 "securité de l'evénement.</p>"
 
-#: inscription/templates/inscription.html:23
+#: inscription/templates/inscription.html:25
 msgid "I agree with the use of my personal data"
 msgstr "Je suis d'accord avec l'utilisation de mes données personnelles"
 
-#: inscription/templates/inscription.html:29
+#: inscription/templates/inscription.html:31
 msgid "Required Fields"
 msgstr "Les champs obligatoires"
 
-#: inscription/templates/inscription.html:49
+#: inscription/templates/inscription.html:50
 msgid "Full Address (Street, No., Apto., Postal Code, City)"
 msgstr "Adresse postal complète (rue, n°, boîte, code postal, ville)"
 
-#: inscription/templates/inscription.html:55
+#: inscription/templates/inscription.html:56
 msgid "Email Address"
 msgstr "Adresse email"
 
-#: inscription/templates/inscription.html:70
+#: inscription/templates/inscription.html:71
 msgid "Number of Places"
 msgstr "Nombre d'emplacements"
 
-#: inscription/templates/inscription.html:78
+#: inscription/templates/inscription.html:79
 msgid "1 slot = about 2,50m/4,50m"
 msgstr "1 emplacement = environ 2,50m/4,50m"
 
-#: inscription/templates/inscription.html:79
+#: inscription/templates/inscription.html:80
 msgid "1 slot = €8 payment on site"
 msgstr "1 emplacement = 8€ paiement sur place"
 
-#: inscription/templates/inscription.html:84
+#: inscription/templates/inscription.html:85
 msgid "Desired Location of the Place(s)"
 msgstr "Lieu souhaité pour le(s) emplacement(s)"
 
-#: inscription/templates/inscription.html:92
+#: inscription/templates/inscription.html:93
 msgid "I would like to receive the newsletter after the event"
-msgstr "Je souhaite recevoir la newsletter après l'événement et après plus rien"
+msgstr ""
+"Je souhaite recevoir la newsletter après l'événement et après plus rien"
 
-#: inscription/templates/inscription.html:98
+#: inscription/templates/inscription.html:99
 msgid "Send"
 msgstr "Envoyer"
 
-#: inscription/templates/inscription.html:125
+#: inscription/templates/inscription.html:126
 msgid "This email already exists."
 msgstr "Cet email existe déjà."
 
@@ -291,3 +284,12 @@ msgstr "Notifications"
 #: inscription/templates/layout.html:10 inscription/templates/layout.html:20
 msgid "Flea Market"
 msgstr "La Brocante Bruyères"
+
+#~ msgid "Enrollment submission in waiting list"
+#~ msgstr "Inscription dans la liste d'attente"
+
+#~ msgid "Enrollment Submission Confirmed"
+#~ msgstr "Inscription reçue"
+
+#~ msgid "Enrollment Confirmed"
+#~ msgstr "Inscription confirmée"
