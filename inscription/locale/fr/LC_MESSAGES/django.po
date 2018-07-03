@@ -220,7 +220,7 @@ msgstr "Lieu souhaité pour le(s) emplacement(s)"
 #: inscription/templates/inscription.html:93
 msgid "I would like to receive the newsletter after the event"
 msgstr ""
-"Je souhaite recevoir la newsletter après l'événement et après plus rien"
+"Je souhaite recevoir la newsletter qui relatera la journée de l'événement"
 
 #: inscription/templates/inscription.html:99
 msgid "Send"
