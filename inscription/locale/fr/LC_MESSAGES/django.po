@@ -172,7 +172,7 @@ msgstr ""
 
 #: inscription/templates/inscription.html:18
 msgid "please read carefully and accept before continue"
-msgstr "Merci de lire attentivement et accepter avant de continuer"
+msgstr "Merci de lire attentivement et d'accepter avant de continuer"
 
 #: inscription/templates/inscription.html:21
 msgid "The use of personal data"
@@ -181,7 +181,8 @@ msgstr ""
 "la Brocante des Bruyères a besoin de connaître certaines de vos données personnelles. "
 "Vos nom et prénom sont nécessaires pour pouvoir vous identifier correctement lors de "
 "chaque communication. Vos adresse mail et téléphone sont indispensables à la clarté et "
-"la bonne compréhension de nos échanges. Ces données, communiquées obligatoirement aux "
+"la bonne compréhension de nos échanges. Votre adresse postale nous aide quant à elle "
+"à affecter les emplacements. Ces données, communiquées obligatoirement aux "
 "services de Police qui assurent la sécurité de l'événement, seront supprimées au plus "
 "tard 2 mois après la date de la Brocante.</p>"
 
