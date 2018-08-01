@@ -1,9 +1,11 @@
+import os
 from django.core.mail import send_mail, BadHeaderError
 from django.http.response import HttpResponse
 from django.template import Context, Template
 from inscription.models import message_history as msg_hist
 
-FROM_EMAIL = "brocantebruyeres@gmail.com"
+
+FROM_EMAIL = os.environ.get('EMAIL_FROM', 'brocantebruyeres@gmail.com')
 
 
 def send_message(recipients, subject, message, type, html_message=None):
