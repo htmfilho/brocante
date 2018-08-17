@@ -16,16 +16,15 @@
 title: La Brocante Bruyères
 email: brocante.bruyeres.en.musique@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  La brocante Bruyères.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "brocantebruyeres.be" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  htmfilho
+twitter_username:
+github_username:
 
 # Build settings
 markdown: kramdown
 theme: minima
-gems:
+plugins:
   - jekyll-feed
 
 # Exclude from processing.
