@@ -70,8 +70,6 @@ def send_email_when_registering(inscription):
 def send_email_when_confirmed(inscription):
     messages = message_history.find_messages(inscription.email, type=message_history.INSCRIPTION_CONFIRMATION).count()
     if inscription.email and inscription.status == CONFIRMED and messages == 0:
-        # subject = _('Enrollment Confirmed')
-        # template = loader.get_template('messages/confirmation_fr.eml')
         msg_template = message_template.get_by_reference("INSCRIPTION_CONFIRMATION")
         subject = post_officer.get_subject_from_template(msg_template)
         context = {'user': "{} {}".format(inscription.first_name, inscription.last_name),
