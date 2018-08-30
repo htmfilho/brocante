@@ -1,12 +1,11 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import user_passes_test
 from django.utils.translation import ugettext_lazy as _
-from inscription.models import inscription, inscription_slot as inscr_slot, message_history, slot
+from inscription.models import inscription, inscription_slot as inscr_slot, message_history
 
 
 @user_passes_test(lambda u: u.is_staff)
 def inscriptions_view(request):
-    available_slots = inscr_slot.find_available_slots()
     total_demanded_places = inscription.get_total_demanded_places()
     total_confirmed_places = inscription.get_total_confirmed_places()
     confirmed_inscriptions = inscription.find_confirmed_inscriptions()

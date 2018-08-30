@@ -1,22 +1,6 @@
 {% extends 'layout.html' %}
 {% load i18n %}
 {% block content %}
-{% if available_slots %}
-    <h2>{% trans "Available Slots" %}</h2>
-
-    <table class="table">
-        <tr>
-            <th>{% trans "Identification" %}</th>
-            <th>{% trans "Location" %}</th>
-        </tr>
-        {% for slot in available_slots %}
-            <tr>
-                <td>{{ slot.identification }}</td>
-                <td>{{ slot.location }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-{% endif %}
 
 {% if inscriptions %}
     <h2>{% trans "Inscriptions" %}</h2>
