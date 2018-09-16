@@ -70,6 +70,11 @@ Initialize the database and create a super user for the application:
 Run the server:    
 
     [venv] $ ./manage.py runserver
+    
+Compiling translations:
+
+    [venv] $ ./manage.py makemessages -i venv
+    [venv] $ ./manage.py compilemessages
 
 Visit the address http://localhost:8000 to view the registration form, and 
 http://localhost:8000/admin for the administration console.
