@@ -3,7 +3,7 @@ from django.db import models
 from django.template import loader
 from django.utils.translation import ugettext_lazy as _
 from inscription.models.inscription import CONFIRMED
-from inscription.models import message_history, message_template, slot
+from inscription.models import message_history, slot
 from inscription.utils import post_officer
 
 
@@ -35,8 +35,7 @@ def find_by_inscription(inscription):
 def send_instructions_emails(inscription):
     messages = message_history.find_messages(inscription.email, type=message_history.INSTRUCTIONS).count()
     if inscription.email and inscription.status == CONFIRMED and messages == 0:
-        msg_template = message_template.get_by_reference("INSTRUCTIONS")
-        subject = post_officer.get_subject_from_template(msg_template)
+        subject = _('Brocante Bruyères 2017 - Useful Information')
         template = loader.get_template('messages/instructions_fr.eml')
         template_html = loader.get_template('messages/instructions_html_fr.eml')
 
