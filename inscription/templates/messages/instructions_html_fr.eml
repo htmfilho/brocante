@@ -1,15 +1,15 @@
 {% autoescape off %}
 <p>Cher exposant,</p>
 
-<p>Votre inscription à la brocante des Bruyères du 01 octobre 2018 a été confirmée. Comme promis, nous vous communiquons
+<p>Votre inscription à la brocante des Bruyères du 07 octobre 2018 a été confirmée. Comme promis, nous vous communiquons
 ci-après quelques informations utiles pour la réussite de cette journée.</p>
 
-<h2>Numérotation des emplacements</h2>
+<h2>NUMÉROTATION DES EMPLACEMENTS</h2>
 
 <p>{{ slots_label }}: <strong>{{ slots }}</strong></p>
 <p>{{ location_label }}: <strong>{{ location }}</strong></p>
 
-<h2> Circulation des véhicules des exposants</h2>
+<h2>CIRCULATION DES VÉHICULES DES EXPOSANTS</h2>
 
 <h3>Lieux d'entrée et sortie des véhicules</h3>
 
@@ -43,7 +43,7 @@ fin de la brocante prévue à 16h00.</p>
 <p style="color: red; font-size: 130%;">Nous vous rappelons qu'aucune vente de produits alimentaires ou de boissons par les exposants n'est autorisée sur le
 site de la brocante.</p>
 
-<h2>Désistement</h2>
+<h2>DÉSISTEMENT</h2>
 
 <p>Au cas où vous renonceriez à votre participation, pourriez-vous le faire savoir dès que possible, <br>
 soit par mail: brocante.bruyeres.en.musique@gmail.com<br>
