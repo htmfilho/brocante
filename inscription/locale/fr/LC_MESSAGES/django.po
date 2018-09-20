@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-16 00:23+0000\n"
+"POT-Creation-Date: 2018-09-20 00:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -280,15 +280,17 @@ msgstr "La Brocante Bruyères"
 
 #: inscription/templates/login.html:6
 msgid "Your username and password didn't match. Please try again."
-msgstr "Votre nom d'utilisateur et votre mot de passe ne correspondaient pas. Veuillez réessayer."
+msgstr ""
+"Votre nom d'utilisateur et votre mot de passe ne correspondaient pas. "
+"Veuillez réessayer."
 
 #: inscription/templates/login.html:11
 msgid ""
 "Your account doesn't have access to this page. To proceed, please login with "
 "an account that has access."
 msgstr ""
-"Votre compte n'a pas accès à cette page. Pour continuer, veuillez vous connecter avec "
-"un compte qui a accès."
+"Votre compte n'a pas accès à cette page. Pour continuer, veuillez vous "
+"connecter avec un compte qui a accès."
 
 #: inscription/templates/login.html:13
 msgid "Please login to see this page."
