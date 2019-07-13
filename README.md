@@ -15,7 +15,7 @@ physical space to sell their unused items to other people that might find those 
 
 ## How to Use
 
-This project uses the stack Python 3.5 / Django 1.11 / PostgreSQL 9.6.
+This project uses the stack Python / Django / PostgreSQL .
 
 To use this project, follow these steps:
 
@@ -37,19 +37,29 @@ Clone the project locally from GitHub:
     $ cd ~/python/projects
     $ git clone https://github.com/htmfilho/brocante.git
     
-Create a Python virtual environment:
+Create a Python virtual environment on Linux:
     
     $ cd brocante
     $ python3 -m venv venv
     $ source venv/bin/activate
+
+or on Windows:
+
+    $ cd brocante
+    $ python -m venv venv
+    $ venv\Scripts\activate
     
 Install the dependencies:
 
     [venv] $ pip install -r requirements.txt
     
-Set the environment variables in the file .env:
+Create an .env file based on .env.example and set the environment variables:
 
-    cp .env.example .env
+    [venv] $ cp .env.example .env
+
+On Windows, use the following command:
+
+    [venv] $ copy .env.example .env
     
 The following variables must be defined:
 
@@ -64,19 +74,22 @@ The following variables must be defined:
     
 Initialize the database and create a super user for the application:
 
-    [venv] $ ./manage.py migrate
-    [venv] $ ./manage.py createsuperuser
+    [venv] $ python manage.py migrate
+    [venv] $ python manage.py createsuperuser
+
+[gettext] is required for the translation files. Make sure it's installed in your local machine. For Windows users, follow the instructions in the [Django documentation][gettext-windows]. Compiling translations:
+
+    [venv] $ python manage.py makemessages -i venv
+    [venv] $ python manage.py compilemessages
 
 Run the server:    
 
-    [venv] $ ./manage.py runserver
+    [venv] $ python manage.py runserver
     
-Compiling translations:
-
-    [venv] $ ./manage.py makemessages -i venv
-    [venv] $ ./manage.py compilemessages
-
 Visit the address http://localhost:8000 to view the registration form, and 
 http://localhost:8000/admin for the administration console.
 
 ### License: MIT
+
+[gettext]: https://www.gnu.org/software/gettext/
+[gettext-windows]: https://docs.djangoproject.com/en/2.2/topics/i18n/translation/#gettext-on-windows
