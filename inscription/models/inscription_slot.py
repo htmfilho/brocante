@@ -35,7 +35,7 @@ def find_by_inscription(inscription):
 def send_instructions_emails(inscription):
     messages = message_history.find_messages(inscription.email, type=message_history.INSTRUCTIONS).count()
     if inscription.email and inscription.status == CONFIRMED and messages == 0:
-        subject = _('Brocante Bruyères 2017 - Useful Information')
+        subject = _('Brocante Bruyères - Useful Information')
         template = loader.get_template('messages/instructions_fr.eml')
         template_html = loader.get_template('messages/instructions_html_fr.eml')
 
