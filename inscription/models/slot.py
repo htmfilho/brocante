@@ -11,7 +11,7 @@ class SlotAdmin(admin.ModelAdmin):
 
 
 class Slot(models.Model):
-    location = models.ForeignKey('Location', verbose_name=_("Location"))
+    location = models.ForeignKey('Location', verbose_name=_("Location"), on_delete=models.CASCADE)
     identification = models.CharField(max_length=20, verbose_name=_("Identification"), unique=True)
 
     def __str__(self):

@@ -21,8 +21,8 @@ class InscriptionSlotAdmin(admin.ModelAdmin):
 
 
 class InscriptionSlot(models.Model):
-    inscription = models.ForeignKey('Inscription', verbose_name=_("Inscription"))
-    slot = models.OneToOneField('Slot', verbose_name=_("Slot"))
+    inscription = models.ForeignKey('Inscription', verbose_name=_("Inscription"), on_delete=models.CASCADE)
+    slot = models.OneToOneField('Slot', verbose_name=_("Slot"), on_delete=models.CASCADE)
 
     def __str__(self):
         return "{} - {}".format(self.slot, self.inscription)
