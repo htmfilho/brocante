@@ -3,7 +3,8 @@ from django.contrib import admin
 from django.contrib.auth import views
 
 urlpatterns = [
-    url(r'', include('inscription.urls')),
+    url(r'', include('website.urls')),
+    url(r'^inscription/', include('inscription.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/login/$', views.LoginView.as_view(template_name='login.html'), name='login'),
 ]

@@ -19,8 +19,6 @@ This project uses the stack Python / Django / PostgreSQL .
 
 To use this project, follow these steps:
 
-### Create your working environment
-
 Create the database and the necessary permissions:
 
     $ createdb brocante

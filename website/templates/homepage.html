@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <p>Depuis 2008, chaque 1er dimanche d'octobre, le quartier des Bruyères à 
+                Louvain-la-Neuve s'anime autour d'une brocante. Organisée par les 
+                habitant.e.s du quartier, cet événement s'adresse à toutes les personnes 
+                qui partagent une envie de rencontres et d'échanges. Une grande partie des 
+                bénéfices de cette brocante est reversée à des associations locales à 
+                finalité sociale. Les bénéfices restants financent les activités organisées
+                par le Comité du quartier des Bruyères.</p>
+        
+            <h4>Où et quand se déroule la brocante ?</h4>
+        
+            <p>L'édition 2019 de la brocante aura lieu le dimanche 6 octobre de 8h00 à 16h00. 
+            Elle se déroule sur le Parvis de la Cantilène et ses alentours (1348 Louvain-la-Neuve).</p>
+        
+            <h4>Vous souhaitez réserver un emplacement ?</h4>
+        
+            <p>Les inscriptions seront ouvertes à partir du 1er août 2019 sur ce site, via le formulaire d'inscription.</p>
+            <p>Prix d’un emplacement : 10€ (maximum 2 emplacements par exposant)<br>
+            Dimensions des emplacements: 2,5 m sur 4,5 m (environ)</p>
+        
+            <p>Toutes les modalités pratiques vous seront communiquées après votre inscription.</p>
+        
+            <h4>Vous souhaitez nous contacter pour une information complémentaire ?</h4>
+        
+            <p>E-mail: <a href="mailto:brocantedesbruyeres@gmail.com">brocantedesbruyeres@gmail.com</a></p>
+        
+            <p>A bientôt !<br>
+            L'équipe de la brocante</p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/brocante-bruyeres.jpg' %}" class="img-fluid">
+        </div>
+    </div>
+</div>
+{% endblock%}
