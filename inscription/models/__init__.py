@@ -1,3 +1,4 @@
+from inscription.models import edition
 from inscription.models import inscription
 from inscription.models import inscription_slot
 from inscription.models import location

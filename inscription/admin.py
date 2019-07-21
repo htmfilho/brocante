@@ -1,6 +1,8 @@
 from django.contrib import admin
-from inscription.models import inscription, inscription_slot, location, message_history, message_template, slot
+from inscription.models import edition, inscription, inscription_slot, location, message_history, message_template, slot
 
+
+admin.site.register(edition.Edition, edition.EditionAdmin)
 admin.site.register(inscription.Inscription, inscription.InscriptionAdmin)
 admin.site.register(inscription_slot.InscriptionSlot, inscription_slot.InscriptionSlotAdmin)
 admin.site.register(location.Location, location.LocationAdmin)

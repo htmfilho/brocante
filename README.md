@@ -13,7 +13,7 @@ physical space to sell their unused items to other people that might find those 
 - Statistics of the ocupation.
 - Management of a waiting list.
 
-## How to Use
+## How to Contribute
 
 This project uses the stack Python / Django / PostgreSQL .
 
