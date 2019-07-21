@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-21 10:00-0400\n"
+"POT-Creation-Date: 2019-07-21 10:36-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,21 +19,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: .\inscription\models\edition.py:13 .\inscription\models\location.py:12
-#, fuzzy
 msgid "Name"
 msgstr "Nom"
 
 #: .\inscription\models\edition.py:14
-#, fuzzy
-#| msgid "Total Inscriptions"
 msgid "Start of Inscriptions"
-msgstr "Total d'inscriptions"
+msgstr "Début des inscriptions"
 
 #: .\inscription\models\edition.py:15
-#, fuzzy
-#| msgid "Inscriptions"
 msgid "End of Inscriptions"
-msgstr "Inscriptions"
+msgstr "Fin des inscriptions"
 
 #: .\inscription\models\edition.py:16
 msgid "Start of Edition"

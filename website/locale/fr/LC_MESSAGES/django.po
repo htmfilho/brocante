@@ -18,6 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\brocante\settings.py:97
-msgid "French"
-msgstr "Français"
+#: .\website\templates\homepage.html:16
+msgid "Enroll Now"
+msgstr "Inscrivez-vous maintenant"
