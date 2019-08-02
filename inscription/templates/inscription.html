@@ -4,7 +4,7 @@
 <div class="container">
   <h2>{% trans "Enrollment Form" %}</h2>
   <br>
-  {% if total_places_reached %}
+  {% if is_total_places_reached %}
     <div class="alert alert-warning" role="alert">
       <strong>{% trans "Warning!" %}</strong>
       {% trans 'All slots are reserved for the moment. If you decide to continue you will be added to the waiting list.' %}</div>

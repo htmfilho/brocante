@@ -72,6 +72,7 @@ The following variables must be defined:
     
 Initialize the database and create a super user for the application:
 
+    [venv] $ python manage.py makemigrations
     [venv] $ python manage.py migrate
     [venv] $ python manage.py createsuperuser
 

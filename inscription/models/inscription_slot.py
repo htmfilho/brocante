@@ -40,10 +40,10 @@ def send_instructions_emails(inscription):
         template_html = loader.get_template('messages/instructions_html_fr.eml')
 
         inscription_slots = find_by_inscription(inscription)
-        slots_quant = inscription_slots.count()
+        num_slots = inscription_slots.count()
         inscription_slot = inscription_slots.first()
 
-        if slots_quant > 1:
+        if num_slots > 1:
             slots_list = _get_list_slots(inscription_slots)
             slots_label = _('The numbers of your slots are')
             slots = slots_list

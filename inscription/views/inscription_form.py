@@ -9,13 +9,13 @@ from inscription.models import inscription as insc
 
 
 def inscription(request):
-    total_places_reached = insc.is_total_places_reached()
     if request.method == 'POST':
         form = InscriptionForm(data=request.POST)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('inscription_submission'))
     else:
+        is_total_places_reached = insc.is_total_places_reached()
         form = InscriptionForm()
 
     return render(request, 'inscription.html', locals())

@@ -1,15 +1,13 @@
 from django.contrib import admin
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from inscription.models import message_history, message_template
+from inscription.models import message_history, message_template, edition
 from inscription.utils import post_officer
 
 NOT_CONFIRMED = 'NOT_CONFIRMED'
 CONFIRMED = 'CONFIRMED'
 WAITING_LIST = 'WAITING_LIST'
 CANCELED = 'CANCELED'
-
-TOTAL_PLACES = 230
 
 STATUS_CHOICES = (
         (NOT_CONFIRMED, _('Not Confirmed')),
@@ -54,29 +52,32 @@ def send_email_when_registering(inscription):
         if is_total_places_reached(getattr(inscription, 'number_places')):
             inscription.status = WAITING_LIST
             msg_template = message_template.get_by_reference("WAITING_LIST")
-            subject = post_officer.get_subject_from_template(msg_template)
-            message = post_officer.get_message_from_template(msg_template)
-            recipients = [inscription.email]
-            post_officer.send_message(recipients, subject, message, message_history.WAITING_LIST)
+            if msg_template:
+                subject = post_officer.get_subject_from_template(msg_template)
+                message = post_officer.get_message_from_template(msg_template)
+                recipients = [inscription.email]
+                post_officer.send_message(recipients, subject, message, message_history.WAITING_LIST)
         else:
             msg_template = message_template.get_by_reference("SUBMISSION_CONFIRMATION")
-            subject = post_officer.get_subject_from_template(msg_template)
-            context = {'user': "{} {}".format(inscription.first_name, inscription.last_name)}
-            message = post_officer.get_message_from_template(msg_template, context)
-            recipients = [inscription.email]
-            post_officer.send_message(recipients, subject, message, message_history.SUBMISSION_CONFIRMATION)
+            if msg_template:
+                subject = post_officer.get_subject_from_template(msg_template)
+                context = {'user': "{} {}".format(inscription.first_name, inscription.last_name)}
+                message = post_officer.get_message_from_template(msg_template, context)
+                recipients = [inscription.email]
+                post_officer.send_message(recipients, subject, message, message_history.SUBMISSION_CONFIRMATION)
 
 
 def send_email_when_confirmed(inscription):
     messages = message_history.find_messages(inscription.email, type=message_history.INSCRIPTION_CONFIRMATION).count()
     if inscription.email and inscription.status == CONFIRMED and messages == 0:
         msg_template = message_template.get_by_reference("INSCRIPTION_CONFIRMATION")
-        subject = post_officer.get_subject_from_template(msg_template)
-        context = {'user': "{} {}".format(inscription.first_name, inscription.last_name),
-                   'places': _("1 slot") if inscription.number_places == 1 else _("2 slots")}
-        message = post_officer.get_message_from_template(msg_template, context)
-        recipients = [inscription.email]
-        post_officer.send_message(recipients, subject, message, message_history.INSCRIPTION_CONFIRMATION)
+        if msg_template:
+            subject = post_officer.get_subject_from_template(msg_template)
+            context = {'user': "{} {}".format(inscription.first_name, inscription.last_name),
+                    'places': _("1 slot") if inscription.number_places == 1 else _("2 slots")}
+            message = post_officer.get_message_from_template(msg_template, context)
+            recipients = [inscription.email]
+            post_officer.send_message(recipients, subject, message, message_history.INSCRIPTION_CONFIRMATION)
 
 
 def find_confirmed_inscriptions():
@@ -92,7 +93,7 @@ def get_total_confirmed_places():
 
 
 def get_total_demanded_places():
-    sum_number_places = Inscription.objects.exclude(status=CANCELED).exclude(status=WAITING_LIST)\
+    sum_number_places = Inscription.objects.exclude(status=CANCELED)\
                                    .aggregate(models.Sum('number_places'))
     if sum_number_places['number_places__sum']:
         return sum_number_places['number_places__sum']
@@ -111,4 +112,4 @@ def is_new_inscription(inscription):
 
 def is_total_places_reached(current_demand=0):
     existing_demand = get_total_demanded_places()
-    return (existing_demand + current_demand) >= TOTAL_PLACES
+    return (existing_demand + current_demand) >= edition.get_total_places_latest_edition()

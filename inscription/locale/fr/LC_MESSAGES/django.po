@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-21 10:36-0400\n"
+"POT-Creation-Date: 2019-08-02 16:30-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,6 +37,11 @@ msgstr "Début de l'édition"
 #: .\inscription\models\edition.py:17
 msgid "End of Edition"
 msgstr "Fin de l'édition"
+
+#: .\inscription\models\edition.py:19
+#: .\inscription\templates\inscription.html:73
+msgid "Number of Places"
+msgstr "Nombre d'emplacements"
 
 #: .\inscription\models\inscription.py:15
 msgid "Not Confirmed"
@@ -217,10 +222,6 @@ msgstr "Adresse postale complète (rue, n°, boîte, code postal, ville)"
 #: .\inscription\templates\inscription.html:58
 msgid "Email Address"
 msgstr "Adresse email"
-
-#: .\inscription\templates\inscription.html:73
-msgid "Number of Places"
-msgstr "Nombre d'emplacements"
 
 #: .\inscription\templates\inscription.html:81
 msgid "1 slot = about 2,50m/4,50m"
