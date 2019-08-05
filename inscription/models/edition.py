@@ -27,7 +27,7 @@ def find_latest_edition():
 
 
 def is_inscriptions_period(edition):
-    return edition.start_inscriptions <= date.today()
+    return edition.start_inscriptions <= date.today() <= edition.end_inscriptions
 
 
 def get_total_places_latest_edition():
