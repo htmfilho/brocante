@@ -51,14 +51,14 @@ def send_email_when_registering(inscription):
     if is_new_inscription(inscription) and inscription.email:
         if is_total_places_reached(getattr(inscription, 'number_places')):
             inscription.status = WAITING_LIST
-            msg_template = message_template.get_by_reference("WAITING_LIST")
+            msg_template = message_template.get_by_reference(message_history.WAITING_LIST)
             if msg_template:
                 subject = post_officer.get_subject_from_template(msg_template)
                 message = post_officer.get_message_from_template(msg_template)
                 recipients = [inscription.email]
                 post_officer.send_message(recipients, subject, message, message_history.WAITING_LIST)
         else:
-            msg_template = message_template.get_by_reference("SUBMISSION_CONFIRMATION")
+            msg_template = message_template.get_by_reference(message_history.SUBMISSION_CONFIRMATION)
             if msg_template:
                 subject = post_officer.get_subject_from_template(msg_template)
                 context = {'user': "{} {}".format(inscription.first_name, inscription.last_name)}
@@ -70,7 +70,7 @@ def send_email_when_registering(inscription):
 def send_email_when_confirmed(inscription):
     messages = message_history.find_messages(inscription.email, type=message_history.INSCRIPTION_CONFIRMATION).count()
     if inscription.email and inscription.status == CONFIRMED and messages == 0:
-        msg_template = message_template.get_by_reference("INSCRIPTION_CONFIRMATION")
+        msg_template = message_template.get_by_reference(message_history.INSCRIPTION_CONFIRMATION)
         if msg_template:
             subject = post_officer.get_subject_from_template(msg_template)
             context = {'user': "{} {}".format(inscription.first_name, inscription.last_name),

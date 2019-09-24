@@ -3,7 +3,7 @@ from django.db import models
 from django.template import loader
 from django.utils.translation import ugettext_lazy as _
 from inscription.models.inscription import CONFIRMED
-from inscription.models import message_history, slot
+from inscription.models import message_history, message_template, slot
 from inscription.utils import post_officer
 
 
@@ -35,33 +35,33 @@ def find_by_inscription(inscription):
 def send_instructions_emails(inscription):
     messages = message_history.find_messages(inscription.email, type=message_history.INSTRUCTIONS).count()
     if inscription.email and inscription.status == CONFIRMED and messages == 0:
-        subject = _('Brocante Bruyères - Useful Information')
-        template = loader.get_template('messages/instructions_fr.eml')
-        template_html = loader.get_template('messages/instructions_html_fr.eml')
+        msg_template = message_template.get_by_reference(message_history.INSTRUCTIONS)
+        if msg_template:
+            subject = post_officer.get_subject_from_template(msg_template)
+            
+            inscription_slots = find_by_inscription(inscription)
+            num_slots = inscription_slots.count()
+            inscription_slot = inscription_slots.first()
 
-        inscription_slots = find_by_inscription(inscription)
-        num_slots = inscription_slots.count()
-        inscription_slot = inscription_slots.first()
+            if num_slots > 1:
+                slots_list = _get_list_slots(inscription_slots)
+                slots_label = _('The numbers of your slots are')
+                slots = slots_list
+                location_label = _('The location of your slots are')
+                location = inscription_slot.slot.location
+            else:
+                slots_label = _('The number of your slot is')
+                slots = inscription_slot.slot.identification
+                location_label = _('The location of your slot is')
+                location = inscription_slot.slot.location
 
-        if num_slots > 1:
-            slots_list = _get_list_slots(inscription_slots)
-            slots_label = _('The numbers of your slots are')
-            slots = slots_list
-            location_label = _('The location of your slots are')
-            location = inscription_slot.slot.location
-        else:
-            slots_label = _('The number of your slot is')
-            slots = inscription_slot.slot.identification
-            location_label = _('The location of your slot is')
-            location = inscription_slot.slot.location
-
-        context = {'slots_label': slots_label,
-                   'slots': slots,
-                   'location_label': location_label,
-                   'location': location}
-        recipients = [inscription.email]
-        post_officer.send_message(recipients, subject, template.render(context), message_history.INSTRUCTIONS,
-                                  html_message=template_html.render(context))
+            context = {'slots_label': slots_label,
+                    'slots': slots,
+                    'location_label': location_label,
+                    'location': location}
+            message = post_officer.get_message_from_template(msg_template, context)
+            recipients = [inscription.email]
+            post_officer.send_message(recipients, subject, message, message_history.INSTRUCTIONS)
 
 
 def _get_list_slots(inscription_slots):

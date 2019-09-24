@@ -28,6 +28,7 @@
           </div>
         </div>
       </div>
+      
     </div>
 
     <p class="required">* {% trans "Required Fields" %}</p>
@@ -126,7 +127,7 @@
             } else {
                 email_exists = true;
                 $('#email').addClass("error");
-                $('#email_message').addClass("error-message").text("{% trans "This email already exists." %}");
+                $('#email_message').addClass("error-message").text('{% trans "This email already exists." %}');
             }
         });
     });
