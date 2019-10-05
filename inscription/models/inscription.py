@@ -23,6 +23,12 @@ class InscriptionAdmin(admin.ModelAdmin):
     fieldsets = ((None, {'fields': ('last_name', 'first_name', 'status', 'address', 'email', 'phone', 'number_places',
                                     'desired_place', 'accepted_newsletter')}),)
     search_fields = ['first_name', 'last_name', 'address', 'email', 'phone']
+    actions = ['send_cancelation']
+
+
+    def send_cancelation(self, request, queryset):
+        for record in queryset:
+            send_cancelation_message(record.inscription)
 
 
 class Inscription(models.Model):
@@ -78,6 +84,18 @@ def send_email_when_confirmed(inscription):
             message = post_officer.get_message_from_template(msg_template, context)
             recipients = [inscription.email]
             post_officer.send_message(recipients, subject, message, message_history.INSCRIPTION_CONFIRMATION)
+
+
+def send_cancelation_message(inscription):
+    messages = message_history.find_messages(inscription.email, type=message_history.CANCELATION).count()
+    if inscription.email and inscription.status == CONFIRMED and messages == 0:
+        msg_template = message_template.get_by_reference(message_history.CANCELATION)
+        if msg_template:
+            subject = post_officer.get_subject_from_template(msg_template)
+            context = {'user': "{} {}".format(inscription.first_name, inscription.last_name),}
+            message = post_officer.get_message_from_template(msg_template, context)
+            recipients = [inscription.email]
+            post_officer.send_message(recipients, subject, message, message_history.CANCELATION)
 
 
 def find_confirmed_inscriptions():

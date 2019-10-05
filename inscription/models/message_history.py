@@ -7,13 +7,15 @@ SUBMISSION_CONFIRMATION = 'SUBMISSION_CONFIRMATION'
 INSCRIPTION_CONFIRMATION = 'INSCRIPTION_CONFIRMATION'
 WAITING_LIST = 'WAITING_LIST'
 INSTRUCTIONS = 'INSTRUCTIONS'
+CANCELATION = 'CANCELATION'
 
 
 TYPE_CHOICES = (
         (SUBMISSION_CONFIRMATION, _('Submission Confirmation')),
         (INSCRIPTION_CONFIRMATION, _('Inscription Confirmation')),
         (WAITING_LIST, _('Waiting List')),
-        (INSTRUCTIONS, _('Instructions')))
+        (INSTRUCTIONS, _('Instructions')),
+        (CANCELATION, _('Cancelation')))
 
 
 class MessageHistoryAdmin(admin.ModelAdmin):
