@@ -27,8 +27,8 @@ class InscriptionAdmin(admin.ModelAdmin):
 
 
     def send_cancelation(self, request, queryset):
-        for record in queryset:
-            send_cancelation_message(record.inscription)
+        for inscription in queryset:
+            send_cancelation_message(inscription)
 
 
 class Inscription(models.Model):
