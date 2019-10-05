@@ -23,10 +23,10 @@ class InscriptionAdmin(admin.ModelAdmin):
     fieldsets = ((None, {'fields': ('last_name', 'first_name', 'status', 'address', 'email', 'phone', 'number_places',
                                     'desired_place', 'accepted_newsletter')}),)
     search_fields = ['first_name', 'last_name', 'address', 'email', 'phone']
-    actions = ['send_cancelation']
+    actions = ['send_event_cancelation_message']
 
 
-    def send_cancelation(self, request, queryset):
+    def send_event_cancelation_message(self, request, queryset):
         for inscription in queryset:
             send_cancelation_message(inscription)
 
